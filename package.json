@@ -42,6 +42,7 @@
             }
         }
     },
+    "icon": "images/logo.png",
     "author": "daniel@dantleech.com",
     "license": "MIT",
     "devDependencies": {
