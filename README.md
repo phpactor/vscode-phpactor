@@ -1,29 +1,24 @@
-Phpactor CoC Extension
+Phpactor VSCode Extension
 ======================
 
 ![phpactor2sm](https://user-images.githubusercontent.com/530801/27995098-82e72c4c-64c0-11e7-96d2-f549c711ca8b.png)
 
 Extension which integrates [Phpactor](https://github.com/phpactor/phpactor)
-with [CoC](https://github.com/neoclide/coc.nvim).
+with [VSCode](https://github.com/neoclide/coc.nvim).
 
 Installation
 ------------
 
 First, install [Phpactor](https://phpactor.readthedocs.io/en/develop/usage/standalone.html).
 
-Then install this extension from Vim/Nvim:
+The package isn't published yet on the "marketplace" so:
 
-```
-:CocInstall coc-phpactor
-```
+1. Git clone this package
+2. `yarn build`
+3. `cd ~/.vscode/extensions`
+4. `ln -s /path/to/vscode-phpactor`
 
-**NOTE**: The Phpactor language server is a work-in-progress (see currently
-[supported](https://phpactor.readthedocs.io/en/develop/lsp/support.html)
-features). 
-
-In order to have access to all of Phpactors functionality it is recommended to
-install the standard [VIM
-Plugin](https://phpactor.readthedocs.io/en/develop/usage/vim-plugin.html).
+Phpactor should then be enabled the next time you start VS code.
 
 Commands
 --------
