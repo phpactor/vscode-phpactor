@@ -28,13 +28,6 @@ Commands
 - `phpactor.services.list`: List Phpactor's currently running services.
 - `phpactor.config.dump`: Dump Phpactor's configuratoin to the log window.
 
-Configuration
--------------
-
-You can add any Phpactor
-[configuration](https://phpactor.readthedocs.io/en/develop/reference/configuration.html)
-using the `phpactor.config` key in `:CocConfig`.
-
 Documentation
 -------------
 
