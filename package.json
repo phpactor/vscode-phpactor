@@ -21,6 +21,24 @@
         "onLanguage:php"
     ],
     "contributes": {
+        "commands": [
+            {
+                "command": "phpactor.reindex",
+                "title": "Phpactor: Reindex the project."
+            },
+            {
+                "command": "phpactor.config.dump",
+                "title": "Phpactor: Dump config"
+            },
+            {
+                "command": "phpactor.services.list",
+                "title": "Phpactor: List Phpactor's currently running services."
+            },
+            {
+                "command": "phpactor.status",
+                "title": "Phpactor: Show Phpactor's status"
+            }
+        ],
         "configuration": {
             "title": "phpactor config",
             "properties": {
