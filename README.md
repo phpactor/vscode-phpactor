@@ -13,10 +13,13 @@ First, install [Phpactor](https://phpactor.readthedocs.io/en/develop/usage/stand
 
 The package isn't published yet on the "marketplace" so:
 
-1. Git clone this package
-2. `yarn build`
-3. `cd ~/.vscode/extensions`
-4. `ln -s /path/to/vscode-phpactor`
+1. Install [yarn](https://classic.yarnpkg.com/en/docs/install) and [npm](https://www.npmjs.com/get-npm).
+2. Install typescript: `npm install -g typescript`
+3. Git clone this package
+4. `npm install`
+5. `yarn build`
+6. `cd ~/.vscode/extensions`. If running [VS Code server on WSL](https://code.visualstudio.com/docs/remote/wsl): `cd ~/.vscode-server/extensions`
+7. `ln -s /path/to/vscode-phpactor`
 
 Phpactor should then be enabled the next time you start VS code.
 
