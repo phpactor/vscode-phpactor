@@ -1,86 +1,86 @@
 {
-	"name": "vscode-phpactor",
-	"version": "1.0.1",
-	"description": "Phpactor PHP Language Server extension for vscode",
-	"main": "lib/extension.js",
-	"publisher": "dantleech",
-	"engines": {
-		"vscode": "^0.0.66"
-	},
-	"keywords": [
-		"vscode",
-		"php",
-		"phpactor"
-	],
-	"scripts": {
-		"clean": "rimraf lib",
-		"build": "tsc -p tsconfig.json",
-		"prepare": "yarn clean && yarn build"
-	},
-	"activationEvents": [
-		"onLanguage:php"
-	],
-	"contributes": {
-		"commands": [
-			{
-				"command": "phpactor.reindex",
-				"title": "Phpactor: Reindex the project."
+    "name": "vscode-phpactor",
+    "version": "1.0.1",
+    "description": "Phpactor PHP Language Server extension for vscode",
+    "main": "lib/extension.js",
+    "publisher": "dantleech",
+    "engines": {
+        "vscode": "^0.0.66"
+    },
+    "keywords": [
+        "vscode",
+        "php",
+        "phpactor"
+    ],
+    "scripts": {
+        "clean": "rimraf lib",
+        "build": "tsc -p tsconfig.json",
+        "prepare": "yarn clean && yarn build"
+    },
+    "activationEvents": [
+        "onLanguage:php"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "phpactor.reindex",
+                "title": "Phpactor: Reindex the project."
             },
             {
-				"command": "phpactor.config.dump",
-				"title": "Phpactor: Dump config"
-			},
+                "command": "phpactor.config.dump",
+                "title": "Phpactor: Dump config"
+            },
             {
-				"command": "phpactor.services.list",
-				"title": "Phpactor: List Phpactor's currently running services."
-			},
+                "command": "phpactor.services.list",
+                "title": "Phpactor: List Phpactor's currently running services."
+            },
             {
-				"command": "phpactor.status",
-				"title": "Phpactor: Show Phpactor's status"
-			}
-		],
-		"configuration": {
-			"title": "phpactor config",
-			"properties": {
-				"phpactor.path": {
-					"type": "string",
-					"default": "phpactor",
-					"description": "phpactor bin path"
-				},
-				"phpactor.enable": {
-					"type": "boolean",
-					"default": true,
-					"description": "enable phpactor language server"
-				},
-				"phpactor.config": {
-					"type": "object",
-					"default": {},
-					"description": "standard phpactor configuration"
-				}
-			}
-		}
-	},
-	"icon": "images/logo.png",
-	"author": "daniel@dantleech.com",
-	"license": "MIT",
-	"devDependencies": {
-		"@chemzqm/tsconfig": "^0.0.3",
-		"@chemzqm/tslint-config": "^1.0.18",
-		"@types/node": "^11.13.10",
-		"rimraf": "^2.6.3",
-		"ts-loader": "^6.0.3",
-		"tslint": "^5.16.0",
-		"typescript": "^3.4.4",
-		"webpack": "^4.34.0",
-		"vscode": "^1.1.37",
-		"webpack-cli": "^3.3.4"
-	},
-	"dependencies": {
-		"vscode-languageclient": "^3.5.1",
-		"vscode-languageserver-protocol": "^3.15.3"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/phpactor/vscode-phpactor"
-	}
+                "command": "phpactor.status",
+                "title": "Phpactor: Show Phpactor's status"
+            }
+        ],
+        "configuration": {
+            "title": "phpactor config",
+            "properties": {
+                "phpactor.path": {
+                    "type": "string",
+                    "default": "phpactor",
+                    "description": "phpactor bin path"
+                },
+                "phpactor.enable": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "enable phpactor language server"
+                },
+                "phpactor.config": {
+                    "type": "object",
+                    "default": {},
+                    "description": "standard phpactor configuration"
+                }
+            }
+        }
+    },
+    "icon": "images/logo.png",
+    "author": "daniel@dantleech.com",
+    "license": "MIT",
+    "devDependencies": {
+        "@chemzqm/tsconfig": "^0.0.3",
+        "@chemzqm/tslint-config": "^1.0.18",
+        "@types/node": "^11.13.10",
+        "rimraf": "^2.6.3",
+        "ts-loader": "^6.0.3",
+        "tslint": "^5.16.0",
+        "typescript": "^3.4.4",
+        "webpack": "^4.34.0",
+        "vscode": "^1.1.37",
+        "webpack-cli": "^3.3.4"
+    },
+    "dependencies": {
+        "vscode-languageclient": "^3.5.1",
+        "vscode-languageserver-protocol": "^3.15.3"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/phpactor/vscode-phpactor"
+    }
 }
