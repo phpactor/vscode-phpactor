@@ -22,6 +22,13 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
     languageClient.start();
 }
 
+export function deactivate() {
+	if (!languageClient) {
+		return undefined;
+	}
+	return languageClient.stop();
+}
+
 function createClient(config: any): LanguageClient {
     let serverOptions: ServerOptions = {
         run: {
