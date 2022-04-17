@@ -27,6 +27,10 @@
     "contributes": {
         "commands": [
             {
+                "command": "phpactor.update",
+                "title": "Update Phpactor to the latest version"
+            },
+            {
                 "command": "phpactor.reindex",
                 "title": "Phpactor: Reindex the project."
             },
@@ -47,8 +51,8 @@
             "title": "phpactor config",
             "properties": {
                 "phpactor.path": {
-                    "type": "string",
-                    "default": "phpactor",
+                    "type": "string|null",
+                    "default": null,
                     "description": "phpactor bin path"
                 },
                 "phpactor.enable": {
