@@ -64,7 +64,7 @@ function createClient(config: any): LanguageClient {
     vscode.commands.registerCommand('phpactor.reindex', reindex);
     vscode.commands.registerCommand('phpactor.config.dump', dumpConfig);
     vscode.commands.registerCommand('phpactor.services.list', servicesList);
-    vscode.commands.registerCommand('phpactor.status', status, vscode);
+    vscode.commands.registerCommand('phpactor.status', status);
 
     return languageClient;
 }
