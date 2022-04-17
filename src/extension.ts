@@ -60,6 +60,7 @@ function createClient(config: any): LanguageClient {
         clientOptions
     );
 
+
     vscode.commands.registerCommand('phpactor.reindex', reindex);
     vscode.commands.registerCommand('phpactor.config.dump', dumpConfig);
     vscode.commands.registerCommand('phpactor.services.list', servicesList);
@@ -76,12 +77,15 @@ function reindex(): void {
     languageClient.sendRequest('indexer/reindex');
 }
 
-function dumpConfig(): void {
+async function dumpConfig(): Promise<void> {
 	if(!languageClient) {
 		return;
     }
 
-    languageClient.sendRequest('session/dumpConfig');
+    const channel = vscode.window.createOutputChannel('Phpactor Config')
+    const result = await languageClient.sendRequest<string>('phpactor/debug/config', {return: true});
+    channel.append(result)
+    channel.show()
 }
 
 function servicesList(): void {
@@ -92,10 +96,13 @@ function servicesList(): void {
     languageClient.sendRequest('service/running');
 }
 
-function status(): void {
+async function status(): Promise<any> {
 	if(!languageClient) {
 		return;
     }
 
-    languageClient.sendRequest('system/status');
+    const channel = vscode.window.createOutputChannel('Phpactor Status')
+    const result = await languageClient.sendRequest<string>('phpactor/status');
+    channel.append(result)
+    channel.show()
 }
