@@ -116,6 +116,7 @@ async function status(): Promise<any> {
 
 async function installPhpactor(storagePath: string): Promise<string> {
     const channel = vscode.window.createOutputChannel("Phpactor Installation")
+    vscode.window.showInformationMessage("Installing Phpactor")
     if (!existsSync(storagePath)) {
         mkdirSync(storagePath)
     }
@@ -123,8 +124,8 @@ async function installPhpactor(storagePath: string): Promise<string> {
     const path = `${storagePath}/phpactor`
 
     if (!existsSync(path)) {
-        await exec(channel, 'git', ['clone', 'https://github.com/phpactor/phpactor'], storagePath)
-        await exec(channel, 'composer', ['install'], path)
+        await exec(channel, 'git', ['clone', 'https://github.com/phpactor/phpactor', '--depth=1'], storagePath)
+        await exec(channel, 'composer', ['install', '--no-dev'], path)
         vscode.window.showInformationMessage(`Phpactor installed at ${path}`)
     }
 
@@ -135,7 +136,7 @@ export async function updatePhpactor(): Promise<void> {
     const channel = vscode.window.createOutputChannel('Phpactor Update')
     channel.appendLine(this.cwd)
     await exec(channel, 'git', ['pull'], this.cwd)
-    await exec(channel, 'composer', ['install'], this.cwd)
+    await exec(channel, 'composer', ['install', '--no-dev'], this.cwd)
     channel.appendLine("Phpactor updated")
     vscode.window.showInformationMessage("Phpactor updated")
 }
