@@ -1,5 +1,5 @@
 Phpactor VSCode Extension
-======================
+=========================
 
 ![phpactor2sm](https://user-images.githubusercontent.com/530801/27995098-82e72c4c-64c0-11e7-96d2-f549c711ca8b.png)
 
