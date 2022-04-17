@@ -30,6 +30,12 @@ export function deactivate() {
 }
 
 function createClient(config: any): LanguageClient {
+    if (!config.path) {
+        vscode.window.showWarningMessage(
+            'The path to Phpactor must be configured (e.g. phpactor, or /path/to/phpactor)"
+        );
+        return;
+    }
     let serverOptions: ServerOptions = {
         run: {
             command: config.path,
