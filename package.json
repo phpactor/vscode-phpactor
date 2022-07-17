@@ -28,42 +28,47 @@
         "commands": [
             {
                 "command": "phpactor.update",
-                "title": "Update Phpactor to the latest version"
+                "title": "Update to the latest version",
+                "category": "Phpactor"
             },
             {
                 "command": "phpactor.reindex",
-                "title": "Phpactor: Reindex the project."
+                "title": "Re-index workspace",
+                "category": "Phpactor"
             },
             {
                 "command": "phpactor.config.dump",
-                "title": "Phpactor: Dump config"
+                "title": "Dump the configuration",
+                "category": "Phpactor"
             },
             {
                 "command": "phpactor.services.list",
-                "title": "Phpactor: List Phpactor's currently running services."
+                "title": "List currently running services",
+                "category": "Phpactor"
             },
             {
                 "command": "phpactor.status",
-                "title": "Phpactor: Show Phpactor's status"
+                "title": "Show current status",
+                "category": "Phpactor"
             }
         ],
         "configuration": {
-            "title": "phpactor config",
+            "title": "Phpactor",
             "properties": {
                 "phpactor.path": {
-                    "type": "string|null",
+                    "type": ["string", "null"],
                     "default": null,
-                    "description": "phpactor bin path"
+                    "description": "Specifies the path to the Phpactor binary"
                 },
                 "phpactor.enable": {
                     "type": "boolean",
                     "default": true,
-                    "description": "enable phpactor language server"
+                    "description": "Whether to enable the language server"
                 },
                 "phpactor.config": {
                     "type": "object",
                     "default": {},
-                    "description": "standard phpactor configuration"
+                    "description": "Specifies the underlying Phpactor configuration."
                 }
             }
         }
