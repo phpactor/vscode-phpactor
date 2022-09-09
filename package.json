@@ -1,6 +1,6 @@
 {
     "name": "vscode-phpactor",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "description": "Phpactor PHP Language Server extension for vscode",
     "main": "lib/extension.js",
     "publisher": "dantleech",
@@ -14,13 +14,12 @@
     ],
     "scripts": {
         "clean": "rimraf lib",
-        "build-ts": "tsc -p tsconfig.json",
         "build-vsce": "vsce package --out=artifacts/phpactor.vsix",
-        "build": "npm run build-ts && npm run build-vsce",
+        "build": "npm run compile && npm run build-vsce",
         "prepare": "yarn clean && yarn build",
         "watch": "tsc -watch -p ./",
         "pretest": "npm run compile",
-        "compile": "tsc -p ./",
+        "compile": "npm run clean && tsc -p ./",
         "test": "node ./lib/test/runTests.js"
     },
     "activationEvents": [
