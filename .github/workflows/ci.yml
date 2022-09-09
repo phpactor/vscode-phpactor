@@ -16,5 +16,6 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 14
+    - run: mkdir artifacts
     - run: npm install
     - run: xvfb-run -a npm test
