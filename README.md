@@ -9,15 +9,21 @@ with [VSCode](https://github.com/neoclide/coc.nvim).
 Installation
 ------------
 
-The package isn't published yet on the "marketplace" so:
+### Normal Installation
 
-1. Install [yarn](https://classic.yarnpkg.com/en/docs/install) and [npm](https://www.npmjs.com/get-npm).
+1. Download the `phpactor.vsix` file from the [lastest release](https://github.com/phpactor/vscode-phpactor/releases/latest) 
+2. Run `code --install-extension /path/to/phpactor.vsix`
+
+### Development Installation
+
+For development it is easier 
+
+1. Install [npm](https://www.npmjs.com/get-npm).
 2. Install typescript: `npm install -g typescript`
 3. Git clone this package
 4. `npm install`
-5. `yarn build`
-6. `cd ~/.vscode/extensions`. If running [VS Code server on WSL](https://code.visualstudio.com/docs/remote/wsl): `cd ~/.vscode-server/extensions`
-7. `ln -s /path/to/vscode-phpactor`
+5. `cd ~/.vscode/extensions`. If running [VS Code server on WSL](https://code.visualstudio.com/docs/remote/wsl): `cd ~/.vscode-server/extensions`
+6. `ln -s /path/to/vscode-phpactor`
 
 Phpactor should then be enabled the next time you start VS code.
 
