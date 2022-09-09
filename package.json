@@ -14,7 +14,9 @@
     ],
     "scripts": {
         "clean": "rimraf lib",
-        "build": "tsc -p tsconfig.json",
+        "build-ts": "tsc -p tsconfig.json",
+        "build-vsce": "vsce package --out=artifacts/phpactor.vsix",
+        "build": "npm run build-ts && npm run build-vsce",
         "prepare": "yarn clean && yarn build",
         "watch": "tsc -watch -p ./",
         "pretest": "npm run compile",
@@ -56,7 +58,10 @@
             "title": "Phpactor",
             "properties": {
                 "phpactor.path": {
-                    "type": ["string", "null"],
+                    "type": [
+                        "string",
+                        "null"
+                    ],
                     "default": null,
                     "description": "Specifies the path to the Phpactor binary"
                 },
@@ -95,6 +100,7 @@
         "tslib": "^2.1.0",
         "tslint": "^5.16.0",
         "typescript": "^4.6.3",
+        "vsce": "^2.11.0",
         "vscode-test": "~1.4.0",
         "webpack": "^4.34.0",
         "webpack-cli": "^3.3.4"

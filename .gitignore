@@ -2,3 +2,5 @@ lib
 .vscode
 node_modules
 .vscode-test
+artifacts
+package-lock.json
