@@ -2,3 +2,4 @@ lib
 .vscode
 node_modules
 .vscode-test
+artifacts/*
