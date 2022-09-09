@@ -110,5 +110,8 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/phpactor/vscode-phpactor"
+    },
+    "sponsor": {
+        "url": "https://github.com/sponsors/dantleech"
     }
 }
