@@ -2,12 +2,14 @@ import {
     LanguageClient,
     ServerOptions,
     LanguageClientOptions,
+    StreamInfo,
 } from "vscode-languageclient";
 
 import * as vscode from "vscode";
 import { spawn } from "child_process";
 import { existsSync, mkdir, mkdirSync } from "fs";
 import { basename, dirname } from "path";
+import * as net from 'net';
 
 const LanguageID = 'php';
 
@@ -35,21 +37,53 @@ export function deactivate() {
 	return languageClient.stop();
 }
 
+function getServerOptions(config): ServerOptions
+{
+    let serverOptions;
+    if(!config.remote.enabled)
+    {
+        // launch language server via stdio
+        serverOptions = {
+            run: {
+                command: config.path,
+                args: [
+                    "language-server",
+                    ...config.launchServerArgs
+                ]
+            },
+            debug: {
+                command: "phpactor",
+                args: [
+                    "language-server",
+                    ...config.launchServerArgs
+                ]
+            },
+        };
+    }
+    else{
+        // credits: https://github.com/itemis/xtext-languageserver-example/blob/master/vscode-extension/src/extension.ts
+        // launch language server via socket
+        serverOptions = () => {
+            let {host,port} = config.remote;
+            let socket = net.connect({
+                host,
+                port
+            });
+
+            let result = <StreamInfo>{
+                writer:socket,
+                reader:socket
+            };
+            
+            return Promise.resolve(result);
+        } 
+    }
+
+    return serverOptions;
+}
+
 function createClient(config: any): LanguageClient {
-    let serverOptions: ServerOptions = {
-        run: {
-            command: config.path,
-            args: [
-                "language-server"
-            ]
-        },
-        debug: {
-            command: "phpactor",
-            args: [
-                "language-server"
-            ]
-        },
-    };
+    let serverOptions = getServerOptions(config);
 
     let clientOptions: LanguageClientOptions = {
         documentSelector: [
