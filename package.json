@@ -73,6 +73,26 @@
                     "type": "object",
                     "default": {},
                     "description": "Specifies the underlying Phpactor configuration."
+                },
+                "phpactor.remote.enabled":{
+                    "type":"boolean",
+                    "default":false,
+                    "description": "Connect to language server via socket instead stdio"
+                },
+                "phpactor.remote.host":{
+                    "type":"string",
+                    "default":"127.0.0.1",
+                    "description": "Host that language server is running"
+                },
+                "phpactor.remote.port":{
+                    "type":"integer",
+                    "default":9090,
+                    "description": "Port that language server is running"
+                },
+                "phpactor.launchServerArgs":{
+                    "type":"array",
+                    "default":[],
+                    "description": "Arguments passeds to language server. Only applies if language server is running in stdio mode"
                 }
             }
         }
