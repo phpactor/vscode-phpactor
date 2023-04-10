@@ -147,8 +147,7 @@
         "typescript": "^4.6.3",
         "vsce": "^1.97.0",
         "vscode-test": "~1.4.0",
-        "webpack": "^5.78.0",
-        "webpack-cli": "^3.3.4"
+        "webpack": "^5.78.0"
     },
     "dependencies": {
         "vscode-languageclient": "^6.1.3"
