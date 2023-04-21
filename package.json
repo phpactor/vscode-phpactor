@@ -23,7 +23,8 @@
         "test": "node ./lib/test/runTests.js"
     },
     "activationEvents": [
-        "onLanguage:php"
+        "onLanguage:php",
+        "onLanguage:blade"
     ],
     "contributes": {
         "commands": [
