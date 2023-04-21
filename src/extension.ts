@@ -88,6 +88,7 @@ function createClient(config: any): LanguageClient {
     let clientOptions: LanguageClientOptions = {
         documentSelector: [
             { language: LanguageID, scheme: 'file' },
+            { language: 'blade', scheme: 'file' },
             { language: LanguageID, scheme: 'untitled' }
         ],
         initializationOptions: config.config
