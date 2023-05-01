@@ -3,6 +3,7 @@ import {
     ServerOptions,
     LanguageClientOptions,
     StreamInfo,
+    RevealOutputChannelOn
 } from "vscode-languageclient";
 
 import * as vscode from "vscode";
@@ -85,13 +86,21 @@ function getServerOptions(config): ServerOptions
 function createClient(config: any): LanguageClient {
     let serverOptions = getServerOptions(config);
 
+    let {verbosity} = config.trace.server;
+    let trace = {
+        "off" : RevealOutputChannelOn.Never,
+        "message" : RevealOutputChannelOn.Warn,
+        "verbose" : RevealOutputChannelOn.Info
+    }
+
     let clientOptions: LanguageClientOptions = {
         documentSelector: [
             { language: LanguageID, scheme: 'file' },
             { language: 'blade', scheme: 'file' },
             { language: LanguageID, scheme: 'untitled' }
         ],
-        initializationOptions: config.config
+        initializationOptions: config.config,
+        revealOutputChannelOn: trace[verbosity]
     };
 
     languageClient = new LanguageClient(
