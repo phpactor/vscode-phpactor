@@ -1,4 +1,4 @@
-lib
+out
 .vscode
 node_modules
 .vscode-test
