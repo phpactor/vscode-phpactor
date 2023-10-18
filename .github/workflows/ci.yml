@@ -21,5 +21,5 @@ jobs:
       - name: Prettier
         run: npm run prettier-check
       - name: Lint
-        run: npm run tslint
+        run: npm run eslint
       - run: xvfb-run -a npm test

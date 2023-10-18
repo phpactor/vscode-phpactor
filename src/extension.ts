@@ -2,22 +2,34 @@ import { LanguageClient, ServerOptions, LanguageClientOptions, StreamInfo } from
 
 import * as vscode from 'vscode'
 import { spawn } from 'child_process'
-import { existsSync, mkdir, mkdirSync } from 'fs'
-import { basename, dirname } from 'path'
+import { existsSync, mkdirSync } from 'fs'
+import { dirname } from 'path'
 import * as net from 'net'
 
 const LanguageID = 'php'
 
 let languageClient: LanguageClient
 
+interface PhpactorConfig {
+    path?: string
+    enable: boolean
+    config: any
+    remote: {
+        enabled: boolean
+        host: string
+        port: number
+    }
+    launchServerArgs: string[]
+}
+
 export async function activate(context: vscode.ExtensionContext): Promise<void> {
     if (process.platform === 'win32') {
-        vscode.window.showWarningMessage('Phpactor is not supported on Windows.')
+        void vscode.window.showWarningMessage('Phpactor is not supported on Windows.')
         return
     }
 
-    let workspaceConfig = vscode.workspace.getConfiguration()
-    const config = workspaceConfig.get('phpactor') as any
+    const workspaceConfig = vscode.workspace.getConfiguration()
+    const config = workspaceConfig.get<PhpactorConfig>('phpactor')!
     const enable = config.enable
 
     if (!config.path) {
@@ -37,13 +49,13 @@ export function deactivate(): Promise<void> | undefined {
     return languageClient.stop()
 }
 
-function getServerOptions(config): ServerOptions {
+function getServerOptions(config: PhpactorConfig): ServerOptions {
     let serverOptions
     if (!config.remote.enabled) {
         // launch language server via stdio
         serverOptions = {
             run: {
-                command: config.path,
+                command: config.path!,
                 args: ['language-server', ...config.launchServerArgs],
             },
             debug: {
@@ -55,13 +67,13 @@ function getServerOptions(config): ServerOptions {
         // credits: https://github.com/itemis/xtext-languageserver-example/blob/master/vscode-extension/src/extension.ts
         // launch language server via socket
         serverOptions = () => {
-            let { host, port } = config.remote
-            let socket = net.connect({
+            const { host, port } = config.remote
+            const socket = net.connect({
                 host,
                 port,
             })
 
-            let result = /*<StreamInfo>*/ {
+            const result = <StreamInfo>{
                 writer: socket,
                 reader: socket,
             }
@@ -73,10 +85,10 @@ function getServerOptions(config): ServerOptions {
     return serverOptions
 }
 
-function createClient(config: any): LanguageClient {
-    let serverOptions = getServerOptions(config)
+function createClient(config: PhpactorConfig): LanguageClient {
+    const serverOptions = getServerOptions(config)
 
-    let clientOptions: LanguageClientOptions = {
+    const clientOptions: LanguageClientOptions = {
         documentSelector: [
             { language: LanguageID, scheme: 'file' },
             { language: 'blade', scheme: 'file' },
@@ -91,7 +103,7 @@ function createClient(config: any): LanguageClient {
     vscode.commands.registerCommand('phpactor.config.dump', dumpConfig)
     vscode.commands.registerCommand('phpactor.services.list', servicesList)
     vscode.commands.registerCommand('phpactor.status', status)
-    const updateConfig = { cwd: dirname(dirname(config.path)) }
+    const updateConfig = { cwd: dirname(dirname(config.path!)) }
     vscode.commands.registerCommand('phpactor.update', updatePhpactor, updateConfig)
 
     return languageClient
@@ -102,7 +114,7 @@ function reindex(): void {
         return
     }
 
-    languageClient.sendRequest('indexer/reindex')
+    void languageClient.sendRequest('indexer/reindex')
 }
 
 async function dumpConfig(): Promise<void> {
@@ -121,7 +133,7 @@ function servicesList(): void {
         return
     }
 
-    languageClient.sendRequest('service/running')
+    void languageClient.sendRequest('service/running')
 }
 
 async function status(): Promise<any> {
@@ -144,22 +156,22 @@ async function installPhpactor(storagePath: string): Promise<string> {
 
     if (!existsSync(path)) {
         const channel = vscode.window.createOutputChannel('Phpactor Installation')
-        vscode.window.showInformationMessage('Installing Phpactor')
+        void vscode.window.showInformationMessage('Installing Phpactor')
         await exec(channel, 'git', ['clone', 'https://github.com/phpactor/phpactor', '--depth=1'], storagePath)
         await exec(channel, 'composer', ['install', '--no-dev'], path)
-        vscode.window.showInformationMessage(`Phpactor installed at ${path}`)
+        void vscode.window.showInformationMessage(`Phpactor installed at ${path}`)
     }
 
     return `${storagePath}/phpactor/bin/phpactor`
 }
 
-export async function updatePhpactor(): Promise<void> {
+export async function updatePhpactor(this: { cwd: string }): Promise<void> {
     const channel = vscode.window.createOutputChannel('Phpactor Update')
     channel.appendLine(this.cwd)
     await exec(channel, 'git', ['pull'], this.cwd)
     await exec(channel, 'composer', ['install', '--no-dev'], this.cwd)
     channel.appendLine('Phpactor updated')
-    vscode.window.showInformationMessage('Phpactor updated')
+    void vscode.window.showInformationMessage('Phpactor updated')
 }
 
 function exec(channel: vscode.OutputChannel, command: string, args: string[], cwd: string): Promise<void> {
@@ -168,10 +180,10 @@ function exec(channel: vscode.OutputChannel, command: string, args: string[], cw
             cwd,
             timeout: 30000,
         })
-        child.stdout.on('data', data => {
+        child.stdout.on('data', (data: Buffer) => {
             channel.append(data.toString('utf8'))
         })
-        child.stderr.on('data', data => {
+        child.stderr.on('data', (data: Buffer) => {
             channel.append(data.toString('utf8'))
         })
         child.on('close', code => {
