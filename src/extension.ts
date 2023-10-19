@@ -11,9 +11,9 @@ const LanguageID = 'php'
 let languageClient: LanguageClient
 
 interface PhpactorConfig {
-    path?: string
+    path: string
     enable: boolean
-    config: any
+    config: object
     remote: {
         enabled: boolean
         host: string
@@ -24,7 +24,7 @@ interface PhpactorConfig {
 
 export async function activate(context: vscode.ExtensionContext): Promise<void> {
     const workspaceConfig = vscode.workspace.getConfiguration()
-    const config = workspaceConfig.get<PhpactorConfig>('phpactor')!
+    const config = workspaceConfig.get<PhpactorConfig>('phpactor') || <PhpactorConfig>{}
     const enable = config.enable
 
     if (!config.path) {
@@ -50,7 +50,7 @@ function getServerOptions(config: PhpactorConfig): ServerOptions {
         // launch language server via stdio
         serverOptions = {
             run: {
-                command: config.path!,
+                command: config.path,
                 args: ['language-server', ...config.launchServerArgs],
             },
             debug: {
@@ -98,7 +98,7 @@ function createClient(config: PhpactorConfig): LanguageClient {
     vscode.commands.registerCommand('phpactor.config.dump', dumpConfig)
     vscode.commands.registerCommand('phpactor.services.list', servicesList)
     vscode.commands.registerCommand('phpactor.status', status)
-    const updateConfig = { cwd: dirname(dirname(config.path!)) }
+    const updateConfig = { cwd: dirname(dirname(config.path)) }
     vscode.commands.registerCommand('phpactor.update', updatePhpactor, updateConfig)
 
     return languageClient
@@ -131,7 +131,7 @@ function servicesList(): void {
     void languageClient.sendRequest('service/running')
 }
 
-async function status(): Promise<any> {
+async function status(): Promise<void> {
     if (!languageClient) {
         return
     }
