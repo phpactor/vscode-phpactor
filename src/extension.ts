@@ -23,11 +23,6 @@ interface PhpactorConfig {
 }
 
 export async function activate(context: vscode.ExtensionContext): Promise<void> {
-    if (process.platform === 'win32') {
-        void vscode.window.showWarningMessage('Phpactor is not supported on Windows.')
-        return
-    }
-
     const workspaceConfig = vscode.workspace.getConfiguration()
     const config = workspaceConfig.get<PhpactorConfig>('phpactor')!
     const enable = config.enable
