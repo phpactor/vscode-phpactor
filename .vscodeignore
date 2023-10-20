@@ -1,0 +1,15 @@
+.github/**
+.vscode/**
+.vscode-test/**
+images/**
+!images/logo.png
+out/test/**
+src/**
+.gitignore
+.npmignore
+.prettierignore
+vendor/bin/**
+**/tsconfig.json
+**/.eslintrc.json
+**/*.map
+**/*.ts

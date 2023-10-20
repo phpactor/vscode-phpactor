@@ -15,8 +15,17 @@ jobs:
         with:
           node-version: 14
       - run: mkdir artifacts
-      - run: npm install
-      - run: npm build
+      - run: npm ci
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+          tools: composer
+      - name: Composer Install
+        run: composer install --prefer-dist --no-interaction --optimize-autoloader --no-dev
+      - run: npm compile
+      - name: Package
+        run: npx vsce package --out=artifacts/phpactor.vsix ${{ github.event.release.tag_name }}
       - name: 'Release Extension'
         uses: actions/upload-release-asset@v1
         env:
