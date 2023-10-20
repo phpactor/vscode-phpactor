@@ -2,10 +2,10 @@
     "name": "vscode-phpactor",
     "version": "1.1.0",
     "description": "Phpactor PHP Language Server extension for vscode",
-    "main": "lib/extension.js",
+    "main": "./out/extension.js",
     "publisher": "dantleech",
     "engines": {
-        "vscode": "^1.43.0"
+        "vscode": "^1.61.0"
     },
     "keywords": [
         "vscode",
@@ -13,14 +13,18 @@
         "phpactor"
     ],
     "scripts": {
-        "clean": "rimraf lib",
+        "clean": "rimraf out",
         "build-vsce": "vsce package --out=artifacts/phpactor.vsix",
         "build": "npm run compile && npm run build-vsce",
         "prepare": "yarn clean && yarn build",
         "watch": "tsc -watch -p ./",
         "pretest": "npm run compile",
         "compile": "npm run clean && tsc -p ./",
-        "test": "node ./lib/test/runTests.js"
+        "lint": "npm run eslint && npm run prettier",
+        "eslint": "eslint \"src/**/*.ts\"",
+        "prettier": "prettier \"**/{*.json,*.yml,.*.yml,*.ts,.prettierrc,*.md}\" --write --list-different",
+        "prettier-check": "npm run prettier -- --write=false",
+        "test": "node ./out/test/runTests.js"
     },
     "activationEvents": [
         "onLanguage:php",
@@ -128,25 +132,25 @@
     "author": "daniel@dantleech.com",
     "license": "MIT",
     "devDependencies": {
-        "@chemzqm/tsconfig": "^0.0.3",
-        "@chemzqm/tslint-config": "^1.0.18",
         "@types/glob": "^7.1.1",
-        "@types/mocha": "^9.1.0",
+        "@types/mocha": "^10.0.0",
         "@types/node": "^11.13.10",
         "@types/vscode": "1.43.0",
-        "@typescript-eslint/eslint-plugin": "^5.19.0",
-        "@typescript-eslint/parser": "^5.19.0",
+        "@typescript-eslint/eslint-plugin": "^5.62.0",
+        "@typescript-eslint/parser": "^5.62.0",
         "@vscode/test-electron": "^2.1.3",
-        "eslint": "^8.13.0",
+        "@vscode/vsce": "^2.21.1",
+        "eslint": "^8.51.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-jsdoc": "^39.6.4",
         "glob": "^7.1.4",
-        "mocha": "^9.2.2",
+        "mocha": "^10.1.0",
+        "prettier": "2.7.1",
         "rimraf": "~3.0.2",
         "source-map-support": "^0.5.12",
         "ts-loader": "~8.0.2",
         "tslib": "^2.1.0",
-        "tslint": "^5.16.0",
         "typescript": "^4.6.3",
-        "vsce": "^2.15.0",
         "vscode-test": "~1.4.0"
     },
     "dependencies": {

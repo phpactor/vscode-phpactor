@@ -1,5 +1,4 @@
-lib
-.vscode
+out
 node_modules
 .vscode-test
 artifacts/*

@@ -1,19 +1,15 @@
 {
-    "extends": "./node_modules/@chemzqm/tsconfig/tsconfig.json",
-    "compilerOptions": {
-        "outDir": "lib",
-        "target": "es2021",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "strict": true,
-        "lib": [
-            "es2021"
-        ],
-        "plugins": []
-    },
-    "include": [
-        "src",
-        "node_modules/vscode/vscode.d.ts"
-    ],
-    "exclude": []
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "out",
+    "target": "es2021",
+    "module": "commonjs",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "lib": ["es2021"],
+    "plugins": []
+  },
+  "include": ["src", "node_modules/vscode/vscode.d.ts"],
+  "exclude": []
 }
