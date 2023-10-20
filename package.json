@@ -14,8 +14,6 @@
     ],
     "scripts": {
         "clean": "rimraf out",
-        "build-vsce": "vsce package --out=artifacts/phpactor.vsix",
-        "build": "npm run compile && npm run build-vsce",
         "prepare": "yarn clean && yarn build",
         "watch": "tsc -watch -p ./",
         "pretest": "npm run compile",
@@ -32,11 +30,6 @@
     ],
     "contributes": {
         "commands": [
-            {
-                "command": "phpactor.update",
-                "title": "Update to the latest version",
-                "category": "Phpactor"
-            },
             {
                 "command": "phpactor.reindex",
                 "title": "Re-index workspace",
