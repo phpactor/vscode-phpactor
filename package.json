@@ -14,7 +14,6 @@
     ],
     "scripts": {
         "clean": "rimraf out",
-        "prepare": "yarn clean && yarn build",
         "watch": "tsc -watch -p ./",
         "pretest": "npm run compile",
         "compile": "npm run clean && tsc -p ./",
