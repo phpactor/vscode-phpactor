@@ -22,6 +22,10 @@ interface PhpactorConfig {
 }
 
 export function activate(context: vscode.ExtensionContext): void {
+    if (!checkPlatform()) {
+        return
+    }
+
     const workspaceConfig = vscode.workspace.getConfiguration()
     const config = workspaceConfig.get<PhpactorConfig>('phpactor') || <PhpactorConfig>{}
     const enable = config.enable
@@ -49,6 +53,14 @@ export function deactivate(): Promise<void> | undefined {
         return undefined
     }
     return languageClient.stop()
+}
+
+function checkPlatform(): boolean {
+    if (process.platform === 'win32') {
+        void vscode.window.showWarningMessage('Phpactor is not supported on Windows.')
+        return false
+    }
+    return true
 }
 
 function getServerOptions(config: PhpactorConfig): ServerOptions {
@@ -117,7 +129,7 @@ function createClient(config: PhpactorConfig): LanguageClient {
 }
 
 function reindex(): void {
-    if (!languageClient) {
+    if (!checkPlatform() || !languageClient) {
         return
     }
 
@@ -125,7 +137,7 @@ function reindex(): void {
 }
 
 async function dumpConfig(): Promise<void> {
-    if (!languageClient) {
+    if (!checkPlatform() || !languageClient) {
         return
     }
 
@@ -136,7 +148,7 @@ async function dumpConfig(): Promise<void> {
 }
 
 function servicesList(): void {
-    if (!languageClient) {
+    if (!checkPlatform() || !languageClient) {
         return
     }
 
@@ -144,7 +156,7 @@ function servicesList(): void {
 }
 
 async function status(): Promise<void> {
-    if (!languageClient) {
+    if (!checkPlatform() || !languageClient) {
         return
     }
 
