@@ -10,6 +10,7 @@ let languageClient: LanguageClient
 
 interface PhpactorConfig {
     path: string
+    executablePath: string
     enable: boolean
     config: object
     remote: {
@@ -27,6 +28,14 @@ export function activate(context: vscode.ExtensionContext): void {
 
     if (!config.path) {
         config.path = context.asAbsolutePath(join('vendor', 'phpactor', 'phpactor', 'bin', 'phpactor'))
+    }
+
+    if (!config.executablePath) {
+        const phpConfig = vscode.workspace.getConfiguration('php')
+        config.executablePath =
+            phpConfig.get<string>('executablePath') ||
+            phpConfig.get<string>('validate.executablePath') ||
+            (process.platform === 'win32' ? 'php.exe' : 'php')
     }
 
     if (enable === false) return
@@ -48,12 +57,19 @@ function getServerOptions(config: PhpactorConfig): ServerOptions {
         // launch language server via stdio
         serverOptions = <ServerOptions>{
             run: {
-                command: config.path,
-                args: ['language-server', ...config.launchServerArgs],
+                command: config.executablePath,
+                args: [config.path, 'language-server', ...config.launchServerArgs],
             },
             debug: {
-                command: 'phpactor',
-                args: ['language-server', ...config.launchServerArgs],
+                command: config.executablePath,
+                args: ['-dxdebug.start_with_request=1', config.path, 'language-server', ...config.launchServerArgs],
+                options: {
+                    env: {
+                        ...process.env,
+                        XDEBUG_MODE: 'debug',
+                        PHPACTOR_ALLOW_XDEBUG: '1',
+                    },
+                },
             },
         }
     } else {
