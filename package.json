@@ -1,9 +1,9 @@
 {
     "name": "vscode-phpactor",
-    "version": "1.1.0",
+    "version": "0.0.0-development",
     "description": "Phpactor PHP Language Server extension for vscode",
     "main": "./out/extension.js",
-    "publisher": "dantleech",
+    "publisher": "phpactor",
     "engines": {
         "vscode": "^1.61.0"
     },
@@ -17,6 +17,8 @@
         "watch": "tsc -watch -p ./",
         "pretest": "npm run compile",
         "compile": "npm run clean && tsc -p ./",
+        "composer": "composer install",
+        "package": "npx vsce package --out=artifacts/phpactor.vsix",
         "lint": "npm run eslint && npm run prettier",
         "eslint": "eslint \"src/**/*.ts\"",
         "prettier": "prettier \"**/{*.json,*.yml,.*.yml,*.ts,.prettierrc,*.md}\" --write --list-different",
