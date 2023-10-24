@@ -6,9 +6,9 @@ import * as vscode from 'vscode'
 
 suite('Extension Test Suite', () => {
     test('Extension is present', () => {
-        assert.ok(vscode.extensions.getExtension('dantleech.vscode-phpactor'))
+        assert.ok(vscode.extensions.getExtension('phpactor.vscode-phpactor'))
     })
     test('Extension activates', async () => {
-        await vscode.extensions.getExtension('dantleech.vscode-phpactor')?.activate()
+        await vscode.extensions.getExtension('phpactor.vscode-phpactor')?.activate()
     })
 })
