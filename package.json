@@ -87,6 +87,14 @@
                     "default": null,
                     "description": "Specifies the path to the Phpactor binary"
                 },
+                "phpactor.executablePath": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "default": null,
+                    "description": "The path to a PHP executable."
+                  },
                 "phpactor.enable": {
                     "type": "boolean",
                     "default": true,
