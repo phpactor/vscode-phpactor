@@ -1,0 +1,7 @@
+{
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "require": {
+    "phpactor/phpactor": "2023.08.06-1"
+  }
+}
