@@ -11,6 +11,20 @@
       "problemMatcher": [],
       "label": "npm: watch",
       "detail": "tsc -watch -p ./"
+    },
+    {
+      "type": "npm",
+      "script": "install",
+      "problemMatcher": [],
+      "label": "npm: install",
+      "detail": "install dependencies from package"
+    },
+    {
+      "type": "npm",
+      "script": "lint",
+      "problemMatcher": [],
+      "label": "npm: lint",
+      "detail": "npm run eslint && npm run prettier"
     }
   ]
 }
