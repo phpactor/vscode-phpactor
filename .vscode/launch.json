@@ -12,6 +12,12 @@
       "args": ["--extensionDevelopmentPath=${workspaceFolder}", "--disable-extensions"],
       "outFiles": ["${workspaceFolder}/out/**/*.js"],
       "sourceMaps": true
+    },
+    {
+      "name": "Listen for Xdebug",
+      "type": "php",
+      "request": "launch",
+      "port": 9003
     }
   ]
 }
