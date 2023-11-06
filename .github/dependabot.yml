@@ -6,6 +6,6 @@ updates:
       interval: 'daily'
   - package-ecosystem: 'composer'
     directory: '/'
-    versioning-strategy: 'increase'
+    versioning-strategy: 'lockfile-only'
     schedule:
       interval: 'daily'
