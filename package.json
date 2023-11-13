@@ -146,7 +146,7 @@
         "eslint": "^8.51.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-jsdoc": "^46.9.0",
-        "glob": "^7.1.4",
+        "glob": "^10.0.0",
         "mocha": "^10.1.0",
         "prettier": "3.1.0",
         "rimraf": "~5.0.0",
