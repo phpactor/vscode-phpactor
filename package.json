@@ -145,7 +145,7 @@
         "@vscode/vsce": "^2.22.0",
         "eslint": "^8.51.0",
         "eslint-config-prettier": "^8.5.0",
-        "eslint-plugin-jsdoc": "^39.6.4",
+        "eslint-plugin-jsdoc": "^46.9.0",
         "glob": "^7.1.4",
         "mocha": "^10.1.0",
         "prettier": "3.1.0",
