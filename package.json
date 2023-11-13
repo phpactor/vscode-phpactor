@@ -18,7 +18,7 @@
         "pretest": "npm run compile",
         "compile": "npm run clean && tsc -p ./",
         "composer": "composer install",
-        "download-phpactor": "curl -L https://github.com/phpactor/phpactor/releases/download/2023.09.24.0/phpactor.phar > phpactor.phar",
+        "download-phpactor": "curl -L https://github.com/phpactor/phpactor/releases/download/2023.08.06-1/phpactor.phar > phpactor.phar",
         "package": "npx vsce package --out=artifacts/phpactor.vsix",
         "lint": "npm run eslint && npm run prettier",
         "eslint": "eslint \"src/**/*.ts\"",
