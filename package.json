@@ -149,7 +149,7 @@
         "glob": "^7.1.4",
         "mocha": "^10.1.0",
         "prettier": "3.1.0",
-        "rimraf": "~3.0.2",
+        "rimraf": "~5.0.0",
         "source-map-support": "^0.5.12",
         "ts-loader": "~8.0.2",
         "tslib": "^2.1.0",
