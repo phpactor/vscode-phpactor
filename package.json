@@ -135,7 +135,7 @@
     "author": "daniel@dantleech.com",
     "license": "MIT",
     "devDependencies": {
-        "@types/glob": "^7.1.1",
+        "@types/glob": "^8.0.0",
         "@types/mocha": "^10.0.0",
         "@types/node": "^11.13.10",
         "@types/vscode": "1.43.0",
