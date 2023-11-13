@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^package.json$"],
+      "matchStrings": ["download-phpactor.*download\\/(?<currentValue>[^\\/]+)\\/phpactor\\.phar"],
+      "versioningTemplate": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)[-\\.]?(?<build>\\w+)?$",
+      "depNameTemplate": "phpactor/phpactor",
+      "datasourceTemplate": "github-tags"
+    }
+  ]
+}

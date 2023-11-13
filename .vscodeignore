@@ -8,6 +8,7 @@ src/**
 .gitignore
 .npmignore
 .prettierignore
+renovate.json
 vendor/bin/**
 **/tsconfig.json
 **/.eslintrc.json
