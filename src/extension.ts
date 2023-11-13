@@ -3,6 +3,7 @@ import { LanguageClient, ServerOptions, LanguageClientOptions, StreamInfo } from
 import * as vscode from 'vscode'
 import { join } from 'path'
 import * as net from 'net'
+import * as fs from 'fs'
 
 const LanguageID = 'php'
 
@@ -32,6 +33,9 @@ export function activate(context: vscode.ExtensionContext): void {
 
     if (!config.path) {
         config.path = context.asAbsolutePath(join('vendor', 'phpactor', 'phpactor', 'bin', 'phpactor'))
+        if (!fs.existsSync(config.path)) {
+            config.path = context.asAbsolutePath(join('phpactor.phar'))
+        }
     }
 
     if (!config.executablePath) {
