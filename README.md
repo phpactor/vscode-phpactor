@@ -2,6 +2,8 @@
 
 ![phpactor2sm](https://user-images.githubusercontent.com/530801/27995098-82e72c4c-64c0-11e7-96d2-f549c711ca8b.png)
 
+[![vs marketplace](https://img.shields.io/vscode-marketplace/v/phpactor.vscode-phpactor.svg?label=vs%20marketplace)](https://marketplace.visualstudio.com/items?itemName=phpactor.vscode-phpactor) [![downloads](https://img.shields.io/vscode-marketplace/d/phpactor.vscode-phpactor.svg)](https://marketplace.visualstudio.com/items?itemName=phpactor.vscode-phpactor) [![rating](https://img.shields.io/vscode-marketplace/r/phpactor.vscode-phpactor.svg)](https://marketplace.visualstudio.com/items?itemName=phpactor.vscode-phpactor)
+
 Extension which integrates [Phpactor](https://github.com/phpactor/phpactor)
 with [VSCode](https://github.com/neoclide/coc.nvim).
 
