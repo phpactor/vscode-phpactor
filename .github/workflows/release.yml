@@ -20,7 +20,7 @@ jobs:
       - run: npm run compile
       - run: mkdir artifacts
       - name: Package
-        run: npx vsce package --out=artifacts/phpactor.vsix ${{ github.event.release.tag_name }}
+        run: npx vsce package --no-git-tag-version --no-update-package-json --out=artifacts/phpactor.vsix ${{ github.event.release.tag_name }}
       - name: 'Release Extension'
         uses: actions/upload-release-asset@v1
         env:
