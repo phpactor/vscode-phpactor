@@ -7,16 +7,86 @@
 Extension which integrates [Phpactor](https://github.com/phpactor/phpactor)
 with [VSCode](https://github.com/neoclide/coc.nvim).
 
+## Feature
+
+- **Completion**: Provides broad and accurate context aware code completion.
+- **Navigation**: Jump to class and method definitions, find references, hover.
+- **Refactoring**: Move classes, complete constructors, implement contracts, generate methods, etc.
+- **Diagnostics**: Diagnostics related to code actions.
+- **Extensions**: Integrates with popular tools and frameworks such as PHPunit, PHPcs, Symfony, PHPStan, etc.
+
 ## Installation
 
-### Normal Installation
+After installation from marketplace, it's recommended to disable VS Code's built-in PHP IntelliSense by setting `php.suggest.basic` to `false` to avoid duplicate suggestions.
+
+Add glob patterns for non standard php file extensions, For example: `"files.associations": { "*.module": "php" }`.
+
+Adapt configuration for the Phpactor indexer based on your project, for example:
+
+```json
+"phpactor.config": {
+    "indexer.supported_extensions": [
+        "php",
+        "module"
+    ],
+    "indexer.include_patterns": [
+        "/**/*.php",
+        "/**/*.module"
+    ],
+    "indexer.exclude_patterns": [
+        "**/vendor/**/Tests/**/*",
+        "**/vendor/**/tests/**/*",
+        "/vendor/composer/**/*",
+        "**/vendor/**/vendor/**"
+    ]
+}
+```
+
+## Commands
+
+- `phpactor.status`: Show Phpactor's status
+- `phpactor.reindex`: Reindex the project.
+- `phpactor.services.list`: List Phpactor's currently running services.
+- `phpactor.config.dump`: Dump Phpactor's configuration to the log window.
+
+## Configuration
+
+Phpactor configuration can be done with the `phpactor.config` setting key.
+
+See all [available configuration](https://phpactor.readthedocs.io/en/master/reference/configuration.html).
+
+For example to enable/disable third party :
+
+```json
+{
+  "phpactor.config": {
+    "phpunit.enabled": true,
+    "php_code_sniffer.enabled": true,
+    "php_code_sniffer.bin": "%project_root%/vendor/bin/phpcs",
+    "language_server_phpstan.enabled": true,
+    "language_server_phpstan.bin": "%project_root%/vendor/bin/phpstan",
+    "language_server_phpstan.config": "%project_root%/phpstan.neon",
+    [...]
+  }
+}
+```
+
+To check settings run `phpactor.config.dump` command.
+
+See [specific documentation](https://phpactor.readthedocs.io/en/master/integrations.html) for third party integration (ie: Behat, Drupal, PHP-CS-Fixer, PHP_CodeSniffer, PHPStan, PHPUnit, Prophecy, Psalm).
+
+## Documentation
+
+For full documentation see [the docs](https://phpactor.readthedocs.io/en/master/index.html).
+
+## Manual installation
 
 Install from Marketplace or install manually.
 
-1. Download the `phpactor.vsix` file from the [lastest release](https://github.com/phpactor/vscode-phpactor/releases/latest)
+1. Download the `phpactor.vsix` file from the [latest release](https://github.com/phpactor/vscode-phpactor/releases/latest)
 2. Run `code --install-extension /path/to/phpactor.vsix`
 
-### Development
+## Development
 
 For development it is easier
 
@@ -33,14 +103,3 @@ For development it is easier
 Note that the Phpactor Language Server currently only runs on Linux and macOS so if you are on Windows you might need to make use of WSL or a Linux VM combined with VSCode Remote.
 
 Before submitting a PR also run `npm run lint` or `Terminal / Run Tasks... / npm: lint`.
-
-## Commands
-
-- `phpactor.status`: Show Phpactor's status
-- `phpactor.reindex`: Reindex the project.
-- `phpactor.services.list`: List Phpactor's currently running services.
-- `phpactor.config.dump`: Dump Phpactor's configuratoin to the log window.
-
-## Documentation
-
-For full documentation see [the docs](https://phpactor.readthedocs.io/en/master/index.html).
