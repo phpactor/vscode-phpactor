@@ -148,7 +148,7 @@
         "eslint-plugin-jsdoc": "^46.9.0",
         "glob": "^10.0.0",
         "mocha": "^10.1.0",
-        "prettier": "3.1.0",
+        "prettier": "3.3.2",
         "rimraf": "~5.0.0",
         "source-map-support": "^0.5.12",
         "ts-loader": "~9.5.0",
