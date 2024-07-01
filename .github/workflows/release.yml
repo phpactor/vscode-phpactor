@@ -30,3 +30,11 @@ jobs:
           asset_path: ./artifacts/phpactor.vsix
           asset_name: phpactor.vsix
           asset_content_type: application/octet-stream
+      - name: Publish to Visual Studio Marketplace
+        run: npx vsce publish --packagePath ./artifacts/phpactor.vsix
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      - name: Publish to Open VSX Registry
+        run: npx ovsx publish --packagePath ./artifacts/phpactor.vsix
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
