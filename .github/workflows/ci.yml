@@ -15,7 +15,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 'v18.20.3'
+          node-version: 'v20.18.0'
       - run: mkdir artifacts
       - run: npm ci
       - name: Prettier
