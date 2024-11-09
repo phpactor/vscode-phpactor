@@ -14,7 +14,8 @@ async function main(): Promise<void> {
 
         // Download VS Code, unzip it and run the integration test
         await runTests({ extensionDevelopmentPath, extensionTestsPath })
-    } catch (err) { // eslint-disable-line @typescript-eslint/no-unused-vars
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (err) {
         // tslint:disable-next-line: no-console
         console.error('Failed to run tests')
         process.exit(1)
