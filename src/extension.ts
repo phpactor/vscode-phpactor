@@ -59,6 +59,7 @@ export function activate(context: vscode.ExtensionContext): void {
                 position: vscode.Position,
                 token: vscode.CancellationToken
             ): Promise<vscode.EvaluatableExpression | undefined> {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
                 if (languageClient.initializeResult?.capabilities.experimental?.xevaluatableExpressionProvider) {
                     const eer = await languageClient.sendRequest(
                         EvaluatableExpressionRequest.type,

@@ -1,3 +1,5 @@
+/* eslint @typescript-eslint/no-empty-object-type: 0 */
+/* eslint @typescript-eslint/no-namespace: 0 */
 import { Range } from 'vscode'
 // import { Range } from 'vscode-languageserver-types'
 import { ProtocolRequestType } from 'vscode-languageserver-protocol/lib/messages'
@@ -13,7 +15,7 @@ interface EvaluatableExpression {
     range: Range
 }
 
-interface EvaluatableExpressionOptions extends WorkDoneProgressOptions {}
+export interface EvaluatableExpressionOptions extends WorkDoneProgressOptions {}
 
 interface EvaluatableExpressionParams extends TextDocumentPositionParams, WorkDoneProgressParams {}
 
@@ -22,7 +24,7 @@ interface EvaluatableExpressionRegistrationOptions
         EvaluatableExpressionOptions {}
 
 export namespace EvaluatableExpressionRequest {
-    export const method: 'textDocument/xevaluatableExpression' = 'textDocument/xevaluatableExpression'
+    export const method = 'textDocument/xevaluatableExpression'
     export const type = new ProtocolRequestType<
         EvaluatableExpressionParams,
         EvaluatableExpression | null,
