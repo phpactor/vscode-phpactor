@@ -61,8 +61,7 @@ export function deactivate(): Promise<void> | undefined {
 
 function checkPlatform(): boolean {
     if (process.platform === 'win32') {
-        void vscode.window.showWarningMessage('Phpactor is not supported on Windows.')
-        return false
+        void vscode.window.showWarningMessage('Phpactor support on Windows is experimental.')
     }
     return true
 }
