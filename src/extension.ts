@@ -1,4 +1,5 @@
 import { LanguageClient, ServerOptions, LanguageClientOptions, StreamInfo } from 'vscode-languageclient'
+import { EvaluatableExpressionRequest } from './protocol'
 
 import * as vscode from 'vscode'
 import { join } from 'path'
@@ -50,6 +51,29 @@ export function activate(context: vscode.ExtensionContext): void {
 
     languageClient = createClient(config)
     languageClient.start()
+
+    context.subscriptions.push(
+        vscode.languages.registerEvaluatableExpressionProvider('php', {
+            async provideEvaluatableExpression(
+                document: vscode.TextDocument,
+                position: vscode.Position,
+                token: vscode.CancellationToken
+            ): Promise<vscode.EvaluatableExpression | undefined> {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+                if (languageClient.initializeResult?.capabilities.experimental?.xevaluatableExpressionProvider) {
+                    const eer = await languageClient.sendRequest(
+                        EvaluatableExpressionRequest.type,
+                        languageClient.code2ProtocolConverter.asTextDocumentPositionParams(document, position),
+                        token
+                    )
+                    if (eer && eer.expression) {
+                        return new vscode.EvaluatableExpression(eer.range, eer.expression)
+                    }
+                }
+                return undefined
+            },
+        })
+    )
 }
 
 export function deactivate(): Promise<void> | undefined {
