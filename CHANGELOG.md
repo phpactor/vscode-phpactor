@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [unreleased]
+
+- Do not popup warning dialog on LSP errors
+
 ## [1.6.0] - 2024-12-05
 
 - Bundle phpactor 2024.11.28.1
