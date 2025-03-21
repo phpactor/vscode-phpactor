@@ -24,7 +24,7 @@
         "eslint": "eslint \"src/**/*.ts\"",
         "prettier": "prettier \"**/{*.json,*.yml,.*.yml,*.ts,.prettierrc,*.md}\" --write --list-different",
         "prettier-check": "npm run prettier -- --write=false",
-        "test": "node ./out/test/runTests.js"
+        "test": "vscode-test"
     },
     "activationEvents": [
         "onLanguage:php",
@@ -141,6 +141,7 @@
         "@types/vscode": "^1.61.0",
         "@typescript-eslint/eslint-plugin": "^8.0.0",
         "@typescript-eslint/parser": "^8.0.0",
+        "@vscode/test-cli": "^0.0.10",
         "@vscode/test-electron": "^2.1.3",
         "@vscode/vsce": "^3.0.0",
         "eslint": "^8.51.0",
