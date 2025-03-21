@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [unreleased]
+
+- Update vscode-languageclient to support debugger inline values
+
 ## [1.6.0] - 2024-12-05
 
 - Bundle phpactor 2024.11.28.1
