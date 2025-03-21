@@ -1,6 +1,8 @@
 import { LanguageClient, ServerOptions, LanguageClientOptions, StreamInfo } from 'vscode-languageclient'
 import { EvaluatableExpressionRequest } from './protocol'
 
+import { spawn } from 'child_process'
+
 import * as vscode from 'vscode'
 import { join } from 'path'
 import * as net from 'net'
@@ -92,7 +94,10 @@ function checkPlatform(): boolean {
 
 function getServerOptions(config: PhpactorConfig): ServerOptions {
     let serverOptions
-    if (!config.remote.enabled) {
+    if (!config.remote.enabled && process.platform === 'win32') {
+        // PHP on windows has problems with STDIO so we need special handling
+        serverOptions = getWindowsServerOptions(config)
+    } else if (!config.remote.enabled) {
         // launch language server via stdio
         serverOptions = <ServerOptions>{
             run: {
@@ -128,6 +133,71 @@ function getServerOptions(config: PhpactorConfig): ServerOptions {
 
             return Promise.resolve(result)
         }
+    }
+
+    return serverOptions
+}
+
+function getWindowsServerOptions(config: PhpactorConfig): ServerOptions {
+    // Find a free port, start PHPActor and connect to it
+    const serverOptions = async () => {
+        const findPort = new Promise<number>(resolve => {
+            const server = net.createServer()
+            server.listen(0, '127.0.0.1', () => {
+                const freePort = (server.address()! as net.AddressInfo).port
+                server.close()
+                resolve(freePort)
+            })
+        })
+
+        const freePort = await findPort
+
+        const startServer = new Promise<void>((resolve, reject) => {
+            const childProcess = spawn(
+                config.executablePath,
+                [config.path, 'language-server', `--address=127.0.0.1:${freePort}`, ...config.launchServerArgs],
+
+                {
+                    env: {
+                        ...process.env,
+                        XDEBUG_MODE: 'debug',
+                        PHPACTOR_ALLOW_XDEBUG: '1',
+                    },
+                }
+            )
+
+            childProcess.stderr.on('data', (chunk: Buffer) => {
+                const str = chunk.toString()
+                languageClient.outputChannel.appendLine(str)
+
+                // when we get the first line, the server is running
+                resolve()
+            })
+            childProcess.on('exit', (code, signal) => {
+                languageClient.outputChannel.appendLine(
+                    `Language server exited ` + (signal ? `from signal ${signal}` : `with exit code ${code}`)
+                )
+                if (code !== 0) {
+                    languageClient.outputChannel.show()
+                }
+
+                reject(new Error('Language Server exited'))
+            })
+        })
+
+        await startServer
+
+        const socket = net.connect({
+            host: '127.0.0.1',
+            port: freePort,
+        })
+
+        const result = <StreamInfo>{
+            writer: socket,
+            reader: socket,
+        }
+
+        return result
     }
 
     return serverOptions
