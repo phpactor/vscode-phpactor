@@ -1,8 +1,13 @@
 # CHANGELOG
 
-## [unreleased]
+## [1.7.0] - 2025-04-02
 
+- Bundle phpactor to [2025.03.28.0](https://github.com/phpactor/phpactor/releases/tag/2025.03.28.0)
+- Change packaging phpactor from phar back to composer
 - Update vscode-languageclient to support debugger inline values
+- Evaluatable expressions support
+- Experimental support for running on Windows with local TCP communication
+- Update dependencies
 
 ## [1.6.0] - 2024-12-05
 
