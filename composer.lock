@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf4e3e7d517c89ea9c9f961a57334f90",
+    "content-hash": "f75fcc4e0e416a514fcdccea2f761524",
     "packages": [
         {
             "name": "amphp/amp",
@@ -1810,16 +1810,16 @@
         },
         {
             "name": "phpactor/phpactor",
-            "version": "2025.02.21.0",
+            "version": "2025.03.28.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpactor/phpactor.git",
-                "reference": "09a83ec69b22032175404dd0e6d9d7dfb14d0de8"
+                "reference": "a74d6f45e5addedf5505e84f4f9584b19a9bb68f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpactor/phpactor/zipball/09a83ec69b22032175404dd0e6d9d7dfb14d0de8",
-                "reference": "09a83ec69b22032175404dd0e6d9d7dfb14d0de8",
+                "url": "https://api.github.com/repos/phpactor/phpactor/zipball/a74d6f45e5addedf5505e84f4f9584b19a9bb68f",
+                "reference": "a74d6f45e5addedf5505e84f4f9584b19a9bb68f",
                 "shasum": ""
             },
             "require": {
@@ -1836,7 +1836,7 @@
                 "phpactor/class-to-file": "~0.5",
                 "phpactor/container": "^3.0",
                 "phpactor/language-server": "^7.0.1",
-                "phpactor/language-server-protocol": "^3.17.3",
+                "phpactor/language-server-protocol": "^3.17.4",
                 "phpactor/map-resolver": "^1.5.0",
                 "phpactor/phly-event-dispatcher": "^2.2.0",
                 "phpactor/tolerant-php-parser": "dev-main",
@@ -1917,7 +1917,7 @@
             "description": "PHP refactoring and intellisense tool for text editors",
             "support": {
                 "issues": "https://github.com/phpactor/phpactor/issues",
-                "source": "https://github.com/phpactor/phpactor/tree/2025.02.21.0"
+                "source": "https://github.com/phpactor/phpactor/tree/2025.03.28.0"
             },
             "funding": [
                 {
@@ -1925,7 +1925,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-21T22:21:13+00:00"
+            "time": "2025-03-26T21:26:58+00:00"
         },
         {
             "name": "phpactor/tolerant-php-parser",
@@ -3396,10 +3396,10 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
