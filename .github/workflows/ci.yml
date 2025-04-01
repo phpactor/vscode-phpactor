@@ -22,8 +22,8 @@ jobs:
         run: npm run prettier-check
       - name: Lint
         run: npm run eslint
-      - name: Download Phpactor
-        run: npm run download-phpactor
+      # - name: Download Phpactor
+      #   run: npm run download-phpactor
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
