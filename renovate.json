@@ -10,5 +10,9 @@
       "depNameTemplate": "phpactor/phpactor",
       "datasourceTemplate": "github-tags"
     }
-  ]
+  ],
+  "composer": {
+    "enabled": true,
+    "rangeStrategy": "update-lockfile"
+  }
 }
