@@ -22,6 +22,13 @@ jobs:
         run: npm run prettier-check
       - name: Lint
         run: npm run eslint
-      - name: Download Phpactor
-        run: npm run download-phpactor
+      # - name: Download Phpactor
+      #   run: npm run download-phpactor
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer
+      - name: Composer Install
+        run: composer install --prefer-dist --no-interaction --optimize-autoloader --no-dev
       - run: xvfb-run -a npm test

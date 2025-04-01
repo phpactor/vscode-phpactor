@@ -15,8 +15,15 @@ jobs:
         with:
           node-version: 'v20.18.0'
       - run: npm ci
-      - name: Download Phpactor
-        run: npm run download-phpactor
+      # - name: Download Phpactor
+      #   run: npm run download-phpactor
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer
+      - name: Composer Install
+        run: composer install --prefer-dist --no-interaction --optimize-autoloader --no-dev
       - run: npm run compile
       - run: mkdir artifacts
       - name: Package
