@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2cf2841a7dfe1af099ad39dc4bb348a7",
+    "content-hash": "47ff73c1bce6e0e3846de9f58a7ef377",
     "packages": [
         {
             "name": "amphp/amp",
@@ -1011,29 +1011,31 @@
         },
         {
             "name": "dantleech/object-renderer",
-            "version": "0.1.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dantleech/object-renderer.git",
-                "reference": "942ad54a22e5ffb9ac3421d7bb06fa76bc45ad30"
+                "reference": "29d2e1020ab10c81cc177b47063c351709ec31a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dantleech/object-renderer/zipball/942ad54a22e5ffb9ac3421d7bb06fa76bc45ad30",
-                "reference": "942ad54a22e5ffb9ac3421d7bb06fa76bc45ad30",
+                "url": "https://api.github.com/repos/dantleech/object-renderer/zipball/29d2e1020ab10c81cc177b47063c351709ec31a0",
+                "reference": "29d2e1020ab10c81cc177b47063c351709ec31a0",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.3 || ^8.0",
-                "psr/container": "^1.0@dev",
+                "php": "^8.0",
+                "psr/container": "^1.0||^2.0",
                 "twig/twig": "^2.0||^3.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.15.0",
                 "phpactor/test-utils": "^1.1",
+                "phpspec/prophecy": "^1.19",
                 "phpstan/phpstan": "^0.12.0",
                 "phpunit/phpunit": "^8.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1058,9 +1060,9 @@
             "description": "Render/pretty-print objects",
             "support": {
                 "issues": "https://github.com/dantleech/object-renderer/issues",
-                "source": "https://github.com/dantleech/object-renderer/tree/0.1.1"
+                "source": "https://github.com/dantleech/object-renderer/tree/master"
             },
-            "time": "2021-01-31T18:57:08+00:00"
+            "time": "2024-06-01T20:42:50+00:00"
         },
         {
             "name": "daverandom/libdns",
@@ -1975,22 +1977,27 @@
         },
         {
             "name": "psr/container",
-            "version": "1.1.2",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/container.git",
-                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea"
+                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/513e0666f7216c7459170d56df27dfcefe1689ea",
-                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/c71ecc56dfe541dbd90c5360474fbc405f8d5963",
+                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.4.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Psr\\Container\\": "src/"
@@ -2017,9 +2024,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-fig/container/issues",
-                "source": "https://github.com/php-fig/container/tree/1.1.2"
+                "source": "https://github.com/php-fig/container/tree/2.0.2"
             },
-            "time": "2021-11-05T16:50:12+00:00"
+            "time": "2021-11-05T16:47:00+00:00"
         },
         {
             "name": "psr/event-dispatcher",

@@ -14,12 +14,5 @@
   "composer": {
     "enabled": true,
     "rangeStrategy": "update-lockfile"
-  },
-  "packageRules": [
-    {
-      "matchDatasources": ["packagist"],
-      "matchPackageNames": ["phpactor/phpactor"],
-      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)[-\\.]?(?<build>\\w+)?$"
-    }
-  ]
+  }
 }
