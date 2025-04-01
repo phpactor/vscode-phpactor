@@ -11,13 +11,15 @@
       "datasourceTemplate": "github-tags"
     }
   ],
-  "composer": {
-    "enabled": true,
-    "lockFileMaintenance": {
-      "enabled": true,
-      "schedule": [
-        "at any time"
-      ]
+  "packageRules": [
+    {
+      "matchPackageNames": ["phpactor/phpactor"],
+      "matchManagers": ["composer"],
+      "versioning": "loose",
+      "enabled": true
     }
+  ],
+  "composer": {
+    "enabled": true
   }
 }
