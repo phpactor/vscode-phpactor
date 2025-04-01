@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47ff73c1bce6e0e3846de9f58a7ef377",
+    "content-hash": "bf4e3e7d517c89ea9c9f961a57334f90",
     "packages": [
         {
             "name": "amphp/amp",
@@ -1011,31 +1011,29 @@
         },
         {
             "name": "dantleech/object-renderer",
-            "version": "dev-master",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dantleech/object-renderer.git",
-                "reference": "29d2e1020ab10c81cc177b47063c351709ec31a0"
+                "reference": "942ad54a22e5ffb9ac3421d7bb06fa76bc45ad30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dantleech/object-renderer/zipball/29d2e1020ab10c81cc177b47063c351709ec31a0",
-                "reference": "29d2e1020ab10c81cc177b47063c351709ec31a0",
+                "url": "https://api.github.com/repos/dantleech/object-renderer/zipball/942ad54a22e5ffb9ac3421d7bb06fa76bc45ad30",
+                "reference": "942ad54a22e5ffb9ac3421d7bb06fa76bc45ad30",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.0",
-                "psr/container": "^1.0||^2.0",
+                "php": "^7.3 || ^8.0",
+                "psr/container": "^1.0@dev",
                 "twig/twig": "^2.0||^3.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.15.0",
                 "phpactor/test-utils": "^1.1",
-                "phpspec/prophecy": "^1.19",
                 "phpstan/phpstan": "^0.12.0",
                 "phpunit/phpunit": "^8.0"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1060,9 +1058,9 @@
             "description": "Render/pretty-print objects",
             "support": {
                 "issues": "https://github.com/dantleech/object-renderer/issues",
-                "source": "https://github.com/dantleech/object-renderer/tree/master"
+                "source": "https://github.com/dantleech/object-renderer/tree/0.1.1"
             },
-            "time": "2024-06-01T20:42:50+00:00"
+            "time": "2021-01-31T18:57:08+00:00"
         },
         {
             "name": "daverandom/libdns",
@@ -1812,16 +1810,16 @@
         },
         {
             "name": "phpactor/phpactor",
-            "version": "2025.03.28.0",
+            "version": "2025.02.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpactor/phpactor.git",
-                "reference": "a74d6f45e5addedf5505e84f4f9584b19a9bb68f"
+                "reference": "09a83ec69b22032175404dd0e6d9d7dfb14d0de8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpactor/phpactor/zipball/a74d6f45e5addedf5505e84f4f9584b19a9bb68f",
-                "reference": "a74d6f45e5addedf5505e84f4f9584b19a9bb68f",
+                "url": "https://api.github.com/repos/phpactor/phpactor/zipball/09a83ec69b22032175404dd0e6d9d7dfb14d0de8",
+                "reference": "09a83ec69b22032175404dd0e6d9d7dfb14d0de8",
                 "shasum": ""
             },
             "require": {
@@ -1838,7 +1836,7 @@
                 "phpactor/class-to-file": "~0.5",
                 "phpactor/container": "^3.0",
                 "phpactor/language-server": "^7.0.1",
-                "phpactor/language-server-protocol": "^3.17.4",
+                "phpactor/language-server-protocol": "^3.17.3",
                 "phpactor/map-resolver": "^1.5.0",
                 "phpactor/phly-event-dispatcher": "^2.2.0",
                 "phpactor/tolerant-php-parser": "dev-main",
@@ -1919,7 +1917,7 @@
             "description": "PHP refactoring and intellisense tool for text editors",
             "support": {
                 "issues": "https://github.com/phpactor/phpactor/issues",
-                "source": "https://github.com/phpactor/phpactor/tree/2025.03.28.0"
+                "source": "https://github.com/phpactor/phpactor/tree/2025.02.21.0"
             },
             "funding": [
                 {
@@ -1927,7 +1925,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-26T21:26:58+00:00"
+            "time": "2025-02-21T22:21:13+00:00"
         },
         {
             "name": "phpactor/tolerant-php-parser",
@@ -1977,27 +1975,22 @@
         },
         {
             "name": "psr/container",
-            "version": "2.0.2",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/container.git",
-                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963"
+                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/c71ecc56dfe541dbd90c5360474fbc405f8d5963",
-                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/513e0666f7216c7459170d56df27dfcefe1689ea",
+                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.4.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Psr\\Container\\": "src/"
@@ -2024,9 +2017,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-fig/container/issues",
-                "source": "https://github.com/php-fig/container/tree/2.0.2"
+                "source": "https://github.com/php-fig/container/tree/1.1.2"
             },
-            "time": "2021-11-05T16:47:00+00:00"
+            "time": "2021-11-05T16:50:12+00:00"
         },
         {
             "name": "psr/event-dispatcher",
