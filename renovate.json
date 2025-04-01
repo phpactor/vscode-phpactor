@@ -13,6 +13,8 @@
   ],
   "composer": {
     "enabled": true,
-    "rangeStrategy": "update-lockfile"
+    "lockFileMaintenance": {
+      "enabled": true
+    }
   }
 }
