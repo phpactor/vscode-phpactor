@@ -1,4 +1,10 @@
-import { LanguageClient, ServerOptions, LanguageClientOptions, StreamInfo } from 'vscode-languageclient/node'
+import {
+    LanguageClient,
+    ServerOptions,
+    LanguageClientOptions,
+    StreamInfo,
+    RevealOutputChannelOn,
+} from 'vscode-languageclient/node'
 import { EvaluatableExpressionRequest } from './protocol'
 
 import { spawn } from 'child_process'
@@ -213,6 +219,7 @@ function createClient(config: PhpactorConfig): LanguageClient {
             { language: LanguageID, scheme: 'untitled' },
         ],
         initializationOptions: config.config,
+        revealOutputChannelOn: RevealOutputChannelOn.Never,
     }
 
     languageClient = new LanguageClient('phpactor', 'Phpactor Language Server', serverOptions, clientOptions)
