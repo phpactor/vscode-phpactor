@@ -2,6 +2,7 @@
 
 ## [unreleased]
 
+- Update vscode-languageclient to support debugger inline values
 - Do not popup warning dialog on LSP errors
 
 ## [1.6.0] - 2024-12-05

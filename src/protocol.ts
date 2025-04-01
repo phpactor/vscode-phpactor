@@ -2,7 +2,7 @@
 /* eslint @typescript-eslint/no-namespace: 0 */
 import { Range } from 'vscode'
 // import { Range } from 'vscode-languageserver-types'
-import { ProtocolRequestType } from 'vscode-languageserver-protocol/lib/messages'
+import { ProtocolRequestType } from 'vscode-languageserver-protocol/lib/common/messages'
 import {
     TextDocumentPositionParams,
     TextDocumentRegistrationOptions,
