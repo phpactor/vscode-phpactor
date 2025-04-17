@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [1.7.1] - 2025-04-17
+
+- Bundle phpactor [2025.04.17.0](https://github.com/phpactor/phpactor/releases/tag/2025.04.17.0) to fix broken installation
+
 ## [1.7.0] - 2025-04-02
 
 - Bundle phpactor to [2025.03.28.0](https://github.com/phpactor/phpactor/releases/tag/2025.03.28.0)
