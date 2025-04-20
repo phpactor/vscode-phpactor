@@ -141,27 +141,23 @@ function getServerOptions(config: PhpactorConfig): ServerOptions {
 function getWindowsServerOptions(config: PhpactorConfig): ServerOptions {
     // Find a free port, start PHPActor and connect to it
     const serverOptions = async () => {
-        const findPort = new Promise<number>(resolve => {
-            const server = net.createServer()
-            server.listen(0, '127.0.0.1', () => {
-                const freePort = (server.address()! as net.AddressInfo).port
-                server.close()
-                resolve(freePort)
-            })
-        })
-
-        const freePort = await findPort
-
-        const startServer = new Promise<void>((resolve, reject) => {
+        const startServer = new Promise<number>((resolve, reject) => {
             const childProcess = spawn(
                 config.executablePath,
-                [config.path, 'language-server', `--address=127.0.0.1:${freePort}`, ...config.launchServerArgs],
-
+                [
+                    config.path,
+                    'language-server',
+                    '--address=127.0.0.1:0',
+                    '--no-ansi',
+                    '-n',
+                    '-v',
+                    ...config.launchServerArgs,
+                ],
                 {
                     env: {
                         ...process.env,
-                        XDEBUG_MODE: 'debug',
-                        PHPACTOR_ALLOW_XDEBUG: '1',
+                        // XDEBUG_MODE: 'debug',
+                        // PHPACTOR_ALLOW_XDEBUG: '1',
                     },
                 }
             )
@@ -171,7 +167,11 @@ function getWindowsServerOptions(config: PhpactorConfig): ServerOptions {
                 languageClient.outputChannel.appendLine(str)
 
                 // when we get the first line, the server is running
-                resolve()
+                const match = str.match(/Listening on 127\.0\.0\.1:(\d+)\n/)
+                if (match) {
+                    const port = parseInt(match[1], 10)
+                    resolve(port)
+                }
             })
             childProcess.on('exit', (code, signal) => {
                 languageClient.outputChannel.appendLine(
@@ -185,11 +185,11 @@ function getWindowsServerOptions(config: PhpactorConfig): ServerOptions {
             })
         })
 
-        await startServer
+        const lspPort = await startServer
 
         const socket = net.connect({
             host: '127.0.0.1',
-            port: freePort,
+            port: lspPort,
         })
 
         const result = <StreamInfo>{
