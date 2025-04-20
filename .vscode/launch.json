@@ -11,7 +11,8 @@
       "runtimeExecutable": "${execPath}",
       "args": ["--extensionDevelopmentPath=${workspaceFolder}", "--Xdisable-extensions"],
       "outFiles": ["${workspaceFolder}/out/**/*.js"],
-      "sourceMaps": true
+      "sourceMaps": true,
+      "preLaunchTask": "npm: watch"
     },
     {
       "name": "Listen for Xdebug",

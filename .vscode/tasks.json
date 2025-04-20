@@ -8,9 +8,10 @@
         "kind": "build",
         "isDefault": true
       },
-      "problemMatcher": [],
+      "problemMatcher": ["$tsc-watch"],
       "label": "npm: watch",
-      "detail": "tsc -watch -p ./"
+      "detail": "tsc -watch -p ./",
+      "isBackground": true
     },
     {
       "type": "npm",
