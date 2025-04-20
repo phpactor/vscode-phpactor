@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [1.7.2] - 2025-04-20
+
+- Improve phpactor start on Windows
+- Do not allow phpactor to run with Xdebug
+
 ## [1.7.1] - 2025-04-17
 
 - Bundle phpactor [2025.04.17.0](https://github.com/phpactor/phpactor/releases/tag/2025.04.17.0) to fix broken installation
