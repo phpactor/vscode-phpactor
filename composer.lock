@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14e367502f72307b7be60d104dc8a0f6",
+    "content-hash": "0c717bbb23e7596b19e99d46fc3a86ca",
     "packages": [
         {
             "name": "amphp/amp",
@@ -1810,16 +1810,16 @@
         },
         {
             "name": "phpactor/phpactor",
-            "version": "2025.04.17.0",
+            "version": "2025-07-25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpactor/phpactor.git",
-                "reference": "23d7c71c042d51cd7a606dbc43700b8b5df2e4f9"
+                "reference": "9dfbcc5c064976e29e58b309baa72b82cdc2703e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpactor/phpactor/zipball/23d7c71c042d51cd7a606dbc43700b8b5df2e4f9",
-                "reference": "23d7c71c042d51cd7a606dbc43700b8b5df2e4f9",
+                "url": "https://api.github.com/repos/phpactor/phpactor/zipball/9dfbcc5c064976e29e58b309baa72b82cdc2703e",
+                "reference": "9dfbcc5c064976e29e58b309baa72b82cdc2703e",
                 "shasum": ""
             },
             "require": {
@@ -1829,6 +1829,7 @@
                 "dantleech/object-renderer": "^0.1.1",
                 "dnoegel/php-xdg-base-dir": "^0.1.0",
                 "ext-mbstring": "*",
+                "ext-tokenizer": "*",
                 "jetbrains/phpstorm-stubs": "dev-master",
                 "monolog/monolog": "^1.23",
                 "php": "^8.1",
@@ -1917,7 +1918,7 @@
             "description": "PHP refactoring and intellisense tool for text editors",
             "support": {
                 "issues": "https://github.com/phpactor/phpactor/issues",
-                "source": "https://github.com/phpactor/phpactor/tree/2025.04.17.0"
+                "source": "https://github.com/phpactor/phpactor/tree/2025-07-25.0"
             },
             "funding": [
                 {
@@ -1925,7 +1926,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-04-16T12:54:23+00:00"
+            "time": "2025-07-25T07:05:46+00:00"
         },
         {
             "name": "phpactor/tolerant-php-parser",
