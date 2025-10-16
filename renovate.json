@@ -5,9 +5,7 @@
     {
       "customType": "regex",
       "managerFilePatterns": ["/^package.json$/"],
-      "matchStrings": [
-        "download-phpactor.*download\\/(?<currentValue>[^\\/]+)\\/phpactor\\.phar"
-      ],
+      "matchStrings": ["download-phpactor.*download\\/(?<currentValue>[^\\/]+)\\/phpactor\\.phar"],
       "versioningTemplate": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)[-\\.]?(?<build>\\w+)?$",
       "depNameTemplate": "phpactor/phpactor",
       "datasourceTemplate": "github-tags"
