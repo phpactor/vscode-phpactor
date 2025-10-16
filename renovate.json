@@ -4,7 +4,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^package.json$"],
+      "managerFilePatterns": ["/^package.json$/"],
       "matchStrings": ["download-phpactor.*download\\/(?<currentValue>[^\\/]+)\\/phpactor\\.phar"],
       "versioningTemplate": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)[-\\.]?(?<build>\\w+)?$",
       "depNameTemplate": "phpactor/phpactor",
