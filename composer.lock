@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c717bbb23e7596b19e99d46fc3a86ca",
+    "content-hash": "97d0bd2a6598ae7947a9145717d02fe8",
     "packages": [
         {
             "name": "amphp/amp",
@@ -1149,19 +1149,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/JetBrains/phpstorm-stubs.git",
-                "reference": "4adc304bd0b6401f48f6e5524687c8ef2a1ff8fb"
+                "reference": "62d3fa7da6c780a35204df11bb0381ee12ef1df0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/4adc304bd0b6401f48f6e5524687c8ef2a1ff8fb",
-                "reference": "4adc304bd0b6401f48f6e5524687c8ef2a1ff8fb",
+                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/62d3fa7da6c780a35204df11bb0381ee12ef1df0",
+                "reference": "62d3fa7da6c780a35204df11bb0381ee12ef1df0",
                 "shasum": ""
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^v3.64.0",
-                "nikic/php-parser": "^v5.3.1",
-                "phpdocumentor/reflection-docblock": "^5.6.0",
-                "phpunit/phpunit": "^11.4.3"
+                "friendsofphp/php-cs-fixer": "^v3.86",
+                "nikic/php-parser": "^v5.6",
+                "phpdocumentor/reflection-docblock": "^5.6",
+                "phpunit/phpunit": "^12.3"
             },
             "default-branch": true,
             "type": "library",
@@ -1189,7 +1189,7 @@
             "support": {
                 "source": "https://github.com/JetBrains/phpstorm-stubs/tree/master"
             },
-            "time": "2025-04-16T09:26:41+00:00"
+            "time": "2025-10-20T10:47:17+00:00"
         },
         {
             "name": "kelunik/certificate",
@@ -1810,16 +1810,16 @@
         },
         {
             "name": "phpactor/phpactor",
-            "version": "2025-07-25.0",
+            "version": "2025.10.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpactor/phpactor.git",
-                "reference": "9dfbcc5c064976e29e58b309baa72b82cdc2703e"
+                "reference": "1e3f851bf810a45d565759b698a70bc4a2d50df7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpactor/phpactor/zipball/9dfbcc5c064976e29e58b309baa72b82cdc2703e",
-                "reference": "9dfbcc5c064976e29e58b309baa72b82cdc2703e",
+                "url": "https://api.github.com/repos/phpactor/phpactor/zipball/1e3f851bf810a45d565759b698a70bc4a2d50df7",
+                "reference": "1e3f851bf810a45d565759b698a70bc4a2d50df7",
                 "shasum": ""
             },
             "require": {
@@ -1888,15 +1888,19 @@
                 "dantleech/what-changed": "~0.4",
                 "dms/phpunit-arraysubset-asserts": "dev-master",
                 "friendsofphp/php-cs-fixer": "^3.32",
+                "guzzlehttp/psr7": "^2.8",
                 "jangregor/phpstan-prophecy": "^1.0",
+                "open-telemetry/exporter-otlp": "^1.3",
+                "open-telemetry/sdk": "^1.7",
+                "php-http/guzzle7-adapter": "^1.1",
                 "phpactor/test-utils": "^1.1.4",
                 "phpbench/phpbench": "^1.4",
                 "phpspec/prophecy-phpunit": "^2.0",
                 "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan": "^1.12",
                 "phpstan/phpstan-phpunit": "^1.0",
                 "phpunit/phpunit": "^9.0",
-                "psalm/phar": "^6.0",
+                "psalm/phar": "6.7.0",
                 "psr/log": "^1.1",
                 "rector/rector": "^1.2",
                 "squizlabs/php_codesniffer": "^3.7",
@@ -1918,7 +1922,7 @@
             "description": "PHP refactoring and intellisense tool for text editors",
             "support": {
                 "issues": "https://github.com/phpactor/phpactor/issues",
-                "source": "https://github.com/phpactor/phpactor/tree/2025-07-25.0"
+                "source": "https://github.com/phpactor/phpactor/tree/2025.10.17.0"
             },
             "funding": [
                 {
@@ -1926,7 +1930,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-07-25T07:05:46+00:00"
+            "time": "2025-10-17T15:06:04+00:00"
         },
         {
             "name": "phpactor/tolerant-php-parser",
@@ -1934,20 +1938,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpactor/tolerant-php-parser.git",
-                "reference": "092205e10b6172d1d2f61087147606b7bc383ae9"
+                "reference": "e2b5a43cbc6521f14f801ca26a02f385fcee2164"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpactor/tolerant-php-parser/zipball/092205e10b6172d1d2f61087147606b7bc383ae9",
-                "reference": "092205e10b6172d1d2f61087147606b7bc383ae9",
+                "url": "https://api.github.com/repos/phpactor/tolerant-php-parser/zipball/e2b5a43cbc6521f14f801ca26a02f385fcee2164",
+                "reference": "e2b5a43cbc6521f14f801ca26a02f385fcee2164",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2"
+                "php": ">=8.1"
             },
             "require-dev": {
                 "phpstan/phpstan": "^1.8",
-                "phpunit/phpunit": "^8.5.15"
+                "phpunit/phpunit": "^10.0"
             },
             "default-branch": true,
             "type": "library",
@@ -1972,7 +1976,7 @@
             "support": {
                 "source": "https://github.com/phpactor/tolerant-php-parser/tree/main"
             },
-            "time": "2025-02-05T22:27:00+00:00"
+            "time": "2025-10-03T12:48:22+00:00"
         },
         {
             "name": "psr/container",

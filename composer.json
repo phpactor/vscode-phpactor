@@ -2,6 +2,6 @@
   "prefer-stable": true,
   "minimum-stability": "dev",
   "require": {
-    "phpactor/phpactor": "2025.07.25.0"
+    "phpactor/phpactor": "2025.10.17.0"
   }
 }
