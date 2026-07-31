@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0b26ae74be16a2071d8dbe9f6bfed9c9",
+    "content-hash": "451fc8081e1088427bcd7218ac38b7a3",
     "packages": [
         {
             "name": "amphp/amp",
@@ -1226,12 +1226,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/JetBrains/phpstorm-stubs",
-                "reference": "b06e5333a76d8e7d7c696bfdc9cd4877a914053d"
+                "reference": "b872a0404e009a42cd4ff77a54505e01b2f126e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/b06e5333a76d8e7d7c696bfdc9cd4877a914053d",
-                "reference": "b06e5333a76d8e7d7c696bfdc9cd4877a914053d",
+                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/b872a0404e009a42cd4ff77a54505e01b2f126e3",
+                "reference": "b872a0404e009a42cd4ff77a54505e01b2f126e3",
                 "shasum": ""
             },
             "require-dev": {
@@ -1263,7 +1263,7 @@
                 "stubs",
                 "type"
             ],
-            "time": "2026-07-17T14:32:17+00:00"
+            "time": "2026-07-31T06:53:28+00:00"
         },
         {
             "name": "kelunik/certificate",
@@ -1960,16 +1960,16 @@
         },
         {
             "name": "phpactor/phpactor",
-            "version": "2026.06.25.0",
+            "version": "2026.07.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpactor/phpactor.git",
-                "reference": "be959c4e1b9f3dcefeca0b5971cbcaddff2df3e0"
+                "reference": "1b3b0f3abfce8771d7cbc04eb73bf89294329994"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpactor/phpactor/zipball/be959c4e1b9f3dcefeca0b5971cbcaddff2df3e0",
-                "reference": "be959c4e1b9f3dcefeca0b5971cbcaddff2df3e0",
+                "url": "https://api.github.com/repos/phpactor/phpactor/zipball/1b3b0f3abfce8771d7cbc04eb73bf89294329994",
+                "reference": "1b3b0f3abfce8771d7cbc04eb73bf89294329994",
                 "shasum": ""
             },
             "require": {
@@ -1980,6 +1980,7 @@
                 "dantleech/object-renderer": "^0.1.1",
                 "dnoegel/php-xdg-base-dir": "^0.1.0",
                 "ext-mbstring": "*",
+                "ext-posix": "*",
                 "ext-tokenizer": "*",
                 "jetbrains/phpstorm-stubs": "dev-master",
                 "monolog/monolog": "^2.10",
@@ -2074,7 +2075,7 @@
             "description": "PHP refactoring and intellisense tool for text editors",
             "support": {
                 "issues": "https://github.com/phpactor/phpactor/issues",
-                "source": "https://github.com/phpactor/phpactor/tree/2026.06.25.0"
+                "source": "https://github.com/phpactor/phpactor/tree/2026.07.22.0"
             },
             "funding": [
                 {
@@ -2082,7 +2083,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-06-26T21:40:56+00:00"
+            "time": "2026-07-22T20:41:58+00:00"
         },
         {
             "name": "phpactor/tolerant-php-parser",
