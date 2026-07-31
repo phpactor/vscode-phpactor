@@ -152,7 +152,7 @@
         "prettier": "3.5.3",
         "rimraf": "~6.1.0",
         "source-map-support": "^0.5.12",
-        "ts-loader": "~9.5.0",
+        "ts-loader": "~9.6.0",
         "tslib": "^2.1.0",
         "typescript": "^5.0.0"
     },
