@@ -13,7 +13,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: '24.18.1'
+          node-version: '24.20.0'
       - run: npm ci
       # - name: Download Phpactor
       #   run: npm run download-phpactor
