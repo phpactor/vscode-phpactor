@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "451fc8081e1088427bcd7218ac38b7a3",
+    "content-hash": "26ee8ca687d336c9c61b37506c3f6633",
     "packages": [
         {
             "name": "amphp/amp",
@@ -1221,24 +1221,86 @@
             "time": "2019-12-04T15:06:13+00:00"
         },
         {
+            "name": "fidry/cpu-core-counter",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/theofidry/cpu-core-counter.git",
+                "reference": "d384a7d0d6e67aa497327260ca95023e92dc2032"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/theofidry/cpu-core-counter/zipball/d384a7d0d6e67aa497327260ca95023e92dc2032",
+                "reference": "d384a7d0d6e67aa497327260ca95023e92dc2032",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "fidry/makefile": "^0.2.0 || ^1.1.2",
+                "fidry/php-cs-fixer-config": "^1.1.2",
+                "phpstan/extension-installer": "^1.2.0",
+                "phpstan/phpstan": "^2.0",
+                "phpstan/phpstan-deprecation-rules": "^2.0.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpstan/phpstan-strict-rules": "^2.0",
+                "phpunit/phpunit": "^8.5.31 || ^9.5.26",
+                "symfony/polyfill-mbstring": "^1.33",
+                "webmozarts/strict-phpunit": "^7.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Fidry\\CpuCoreCounter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Théo FIDRY",
+                    "email": "theo.fidry@gmail.com"
+                }
+            ],
+            "description": "Tiny utility to get the number of CPU cores.",
+            "keywords": [
+                "CPU",
+                "core"
+            ],
+            "support": {
+                "issues": "https://github.com/theofidry/cpu-core-counter/issues",
+                "source": "https://github.com/theofidry/cpu-core-counter/tree/1.4.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/theofidry",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-09-29T22:11:39+00:00"
+        },
+        {
             "name": "jetbrains/phpstorm-stubs",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JetBrains/phpstorm-stubs",
-                "reference": "b872a0404e009a42cd4ff77a54505e01b2f126e3"
+                "reference": "e4f5f6c3de39f3bab3e9f3fca4b8cdb8b061e681"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/b872a0404e009a42cd4ff77a54505e01b2f126e3",
-                "reference": "b872a0404e009a42cd4ff77a54505e01b2f126e3",
+                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/e4f5f6c3de39f3bab3e9f3fca4b8cdb8b061e681",
+                "reference": "e4f5f6c3de39f3bab3e9f3fca4b8cdb8b061e681",
                 "shasum": ""
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^v3.86",
                 "nikic/php-parser": "^v5.6",
-                "phpdocumentor/reflection-docblock": "^5.6",
-                "phpunit/phpunit": "^12.3"
+                "phpdocumentor/reflection-docblock": "^6.0",
+                "phpunit/phpunit": "^13.2"
             },
             "default-branch": true,
             "type": "library",
@@ -1263,7 +1325,7 @@
                 "stubs",
                 "type"
             ],
-            "time": "2026-07-31T06:53:28+00:00"
+            "time": "2026-09-07T18:07:02+00:00"
         },
         {
             "name": "kelunik/certificate",
@@ -1726,16 +1788,16 @@
         },
         {
             "name": "phpactor/language-server",
-            "version": "7.0.1",
+            "version": "8.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpactor/language-server.git",
-                "reference": "e4934195cc1857ec3347a488f3357b0f0df2d2bf"
+                "reference": "3b54a2bbe10c8ef7ecf9a2f1d534396fd9376e84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpactor/language-server/zipball/e4934195cc1857ec3347a488f3357b0f0df2d2bf",
-                "reference": "e4934195cc1857ec3347a488f3357b0f0df2d2bf",
+                "url": "https://api.github.com/repos/phpactor/language-server/zipball/3b54a2bbe10c8ef7ecf9a2f1d534396fd9376e84",
+                "reference": "3b54a2bbe10c8ef7ecf9a2f1d534396fd9376e84",
                 "shasum": ""
             },
             "require": {
@@ -1743,7 +1805,7 @@
                 "dantleech/argument-resolver": "^1.1",
                 "dantleech/invoke": "^2.0",
                 "php": "^8.1",
-                "phpactor/language-server-protocol": "^3.17",
+                "phpactor/language-server-protocol": "^3.17.6",
                 "psr/event-dispatcher": "^1.0",
                 "psr/log": "^1.0",
                 "ramsey/uuid": "^4.0"
@@ -1785,22 +1847,22 @@
             "description": "Generic Language Server Platform",
             "support": {
                 "issues": "https://github.com/phpactor/language-server/issues",
-                "source": "https://github.com/phpactor/language-server/tree/7.0.1"
+                "source": "https://github.com/phpactor/language-server/tree/8.0.0"
             },
-            "time": "2025-01-26T23:40:29+00:00"
+            "time": "2026-09-19T13:16:16+00:00"
         },
         {
             "name": "phpactor/language-server-protocol",
-            "version": "3.17.4",
+            "version": "3.17.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpactor/language-server-protocol.git",
-                "reference": "1f7d7218db2cc77223bbb4e03961d0bceea50e60"
+                "reference": "d5bfa9258b27c9dd0215e22ebd00e65c1905c89e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpactor/language-server-protocol/zipball/1f7d7218db2cc77223bbb4e03961d0bceea50e60",
-                "reference": "1f7d7218db2cc77223bbb4e03961d0bceea50e60",
+                "url": "https://api.github.com/repos/phpactor/language-server-protocol/zipball/d5bfa9258b27c9dd0215e22ebd00e65c1905c89e",
+                "reference": "d5bfa9258b27c9dd0215e22ebd00e65c1905c89e",
                 "shasum": ""
             },
             "require": {
@@ -1837,9 +1899,9 @@
             "description": "Langauge Server Protocol for PHP (transpiled)",
             "support": {
                 "issues": "https://github.com/phpactor/language-server-protocol/issues",
-                "source": "https://github.com/phpactor/language-server-protocol/tree/3.17.4"
+                "source": "https://github.com/phpactor/language-server-protocol/tree/3.17.6"
             },
-            "time": "2024-11-21T20:07:12+00:00"
+            "time": "2026-09-17T19:57:24+00:00"
         },
         {
             "name": "phpactor/map-resolver",
@@ -1960,16 +2022,16 @@
         },
         {
             "name": "phpactor/phpactor",
-            "version": "2026.07.22.0",
+            "version": "2026.10.07.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpactor/phpactor.git",
-                "reference": "1b3b0f3abfce8771d7cbc04eb73bf89294329994"
+                "reference": "ac2857bdf1c52424d753e328606511242c6ba694"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpactor/phpactor/zipball/1b3b0f3abfce8771d7cbc04eb73bf89294329994",
-                "reference": "1b3b0f3abfce8771d7cbc04eb73bf89294329994",
+                "url": "https://api.github.com/repos/phpactor/phpactor/zipball/ac2857bdf1c52424d753e328606511242c6ba694",
+                "reference": "ac2857bdf1c52424d753e328606511242c6ba694",
                 "shasum": ""
             },
             "require": {
@@ -1982,6 +2044,7 @@
                 "ext-mbstring": "*",
                 "ext-posix": "*",
                 "ext-tokenizer": "*",
+                "fidry/cpu-core-counter": "^1.1",
                 "jetbrains/phpstorm-stubs": "dev-master",
                 "monolog/monolog": "^2.10",
                 "myclabs/deep-copy": "^1.13",
@@ -1989,8 +2052,8 @@
                 "phpactor/amp-fswatch": "^0.3.0",
                 "phpactor/class-to-file": "~0.5",
                 "phpactor/container": "^3.0",
-                "phpactor/language-server": "^7.0.1",
-                "phpactor/language-server-protocol": "^3.17.4",
+                "phpactor/language-server": "^8.0.0",
+                "phpactor/language-server-protocol": "^3.17.6",
                 "phpactor/map-resolver": "^1.7.0",
                 "phpactor/phly-event-dispatcher": "^2.2.0",
                 "phpactor/tolerant-php-parser": "dev-phan-phactor-fixes",
@@ -2075,7 +2138,7 @@
             "description": "PHP refactoring and intellisense tool for text editors",
             "support": {
                 "issues": "https://github.com/phpactor/phpactor/issues",
-                "source": "https://github.com/phpactor/phpactor/tree/2026.07.22.0"
+                "source": "https://github.com/phpactor/phpactor/tree/2026.10.07.0"
             },
             "funding": [
                 {
@@ -2083,7 +2146,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-07-22T20:41:58+00:00"
+            "time": "2026-10-07T19:58:52+00:00"
         },
         {
             "name": "phpactor/tolerant-php-parser",
