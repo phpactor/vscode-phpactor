@@ -154,7 +154,7 @@
         "source-map-support": "^0.5.12",
         "ts-loader": "~9.6.0",
         "tslib": "^2.1.0",
-        "typescript": "^5.0.0"
+        "typescript": "^7.0.0"
     },
     "dependencies": {
         "vscode-languageclient": "^10.0.0"
